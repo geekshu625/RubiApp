@@ -14,6 +14,7 @@
 		AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B4243E2FD400FE6C75 /* APIClient.swift */; };
 		AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */; };
 		AD4193B9243E3D2100FE6C75 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B8243E3D2100FE6C75 /* Home.storyboard */; };
+		AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		AD4193B4243E2FD400FE6C75 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		AD4193B8243E3D2100FE6C75 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		AD41939D243E22F100FE6C75 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */,
 				AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */,
 				AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */,

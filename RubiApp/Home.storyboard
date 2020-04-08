@@ -11,7 +11,7 @@
         <!--ホーム-->
         <scene sceneID="6Wd-gy-jOl">
             <objects>
-                <viewController id="YUD-Ow-adr" sceneMemberID="viewController">
+                <viewController id="YUD-Ow-adr" customClass="HomeViewController" customModule="RubiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YVC-WY-wOH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
