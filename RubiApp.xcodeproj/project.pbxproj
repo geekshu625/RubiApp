@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD419398243E22CA00FE6C75 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AD419399243E22D300FE6C75 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AD41939A243E22E200FE6C75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD41939B243E22E600FE6C75 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD41939C243E22EC00FE6C75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AD41939D243E22F100FE6C75 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		ADC52B1F243E15C700A62BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */,
+				AD419398243E22CA00FE6C75 /* API */,
+				AD41939D243E22F100FE6C75 /* ViewController */,
+				AD41939C243E22EC00FE6C75 /* View */,
+				AD41939B243E22E600FE6C75 /* ViewModel */,
+				AD41939A243E22E200FE6C75 /* Model */,
+				AD419399243E22D300FE6C75 /* Extension */,
 				ADC52B2D243E15C700A62BA7 /* ViewController.swift */,
 				ADC52B2F243E15C700A62BA7 /* Main.storyboard */,
 				ADC52B32243E15C700A62BA7 /* Assets.xcassets */,
@@ -85,7 +133,6 @@
 				41ADC2EEFC06CCA8F4109D15 /* Pods-RubiApp.debug.xcconfig */,
 				CDDC87E1F24EAFEEC967713D /* Pods-RubiApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
