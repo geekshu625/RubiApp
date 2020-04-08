@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD4193A6243E264100FE6C75 /* RubiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193A5243E264100FE6C75 /* RubiAppTests.swift */; };
+		AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AD243E29BB00FE6C75 /* HiraganaCodable.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B2E243E15C700A62BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2D243E15C700A62BA7 /* ViewController.swift */; };
 		ADC52B31243E15C700A62BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B2F243E15C700A62BA7 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4193A5243E264100FE6C75 /* RubiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiAppTests.swift; sourceTree = "<group>"; };
 		AD4193A7243E264100FE6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4193AD243E29BB00FE6C75 /* HiraganaCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaCodable.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B2D243E15C700A62BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		AD419398243E22CA00FE6C75 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				AD4193AD243E29BB00FE6C75 /* HiraganaCodable.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */,
 				ADC52B2E243E15C700A62BA7 /* ViewController.swift in Sources */,
 				ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */,
 			);
