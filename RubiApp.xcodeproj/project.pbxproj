@@ -12,6 +12,8 @@
 		AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */; };
 		AD4193B2243E2F2100FE6C75 /* FakeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B1243E2F2100FE6C75 /* FakeAPIClient.swift */; };
 		AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B4243E2FD400FE6C75 /* APIClient.swift */; };
+		AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */; };
+		AD4193B9243E3D2100FE6C75 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B8243E3D2100FE6C75 /* Home.storyboard */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,8 @@
 		AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		AD4193B1243E2F2100FE6C75 /* FakeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPIClient.swift; sourceTree = "<group>"; };
 		AD4193B4243E2FD400FE6C75 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		AD4193B8243E3D2100FE6C75 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				AD41939A243E22E200FE6C75 /* Model */,
 				AD419399243E22D300FE6C75 /* Extension */,
 				ADC52B32243E15C700A62BA7 /* Assets.xcassets */,
+				AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */,
+				AD4193B8243E3D2100FE6C75 /* Home.storyboard */,
 				ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */,
 				ADC52B37243E15C700A62BA7 /* Info.plist */,
 			);
@@ -265,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */,
+				AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */,
 				ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */,
+				AD4193B9243E3D2100FE6C75 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
