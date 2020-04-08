@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD4193A6243E264100FE6C75 /* RubiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193A5243E264100FE6C75 /* RubiAppTests.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B2E243E15C700A62BA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2D243E15C700A62BA7 /* ViewController.swift */; };
 		ADC52B31243E15C700A62BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B2F243E15C700A62BA7 /* Main.storyboard */; };
@@ -15,8 +16,21 @@
 		BFC366F9430438BB1E2551A9 /* Pods_RubiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD334CB9FB8D9375F1BB2884 /* Pods_RubiApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AD4193A8243E264100FE6C75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADC52B20243E15C700A62BA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADC52B27243E15C700A62BA7;
+			remoteInfo = RubiApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		41ADC2EEFC06CCA8F4109D15 /* Pods-RubiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiApp.debug.xcconfig"; path = "Target Support Files/Pods-RubiApp/Pods-RubiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD4193A5243E264100FE6C75 /* RubiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiAppTests.swift; sourceTree = "<group>"; };
+		AD4193A7243E264100FE6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B2D243E15C700A62BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD4193A0243E264000FE6C75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADC52B25243E15C700A62BA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,10 +111,20 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		AD4193A4243E264100FE6C75 /* RubiAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193A5243E264100FE6C75 /* RubiAppTests.swift */,
+				AD4193A7243E264100FE6C75 /* Info.plist */,
+			);
+			path = RubiAppTests;
+			sourceTree = "<group>";
+		};
 		ADC52B1F243E15C700A62BA7 = {
 			isa = PBXGroup;
 			children = (
 				ADC52B2A243E15C700A62BA7 /* RubiApp */,
+				AD4193A4243E264100FE6C75 /* RubiAppTests */,
 				ADC52B29243E15C700A62BA7 /* Products */,
 				DC107FCEBE18DD4B83073691 /* Pods */,
 				94F8DA8E1A5CF08C40444969 /* Frameworks */,
@@ -104,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				ADC52B28243E15C700A62BA7 /* RubiApp.app */,
+				AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +171,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD4193A2243E264000FE6C75 /* RubiAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD4193AC243E264100FE6C75 /* Build configuration list for PBXNativeTarget "RubiAppTests" */;
+			buildPhases = (
+				AD41939F243E264000FE6C75 /* Sources */,
+				AD4193A0243E264000FE6C75 /* Frameworks */,
+				AD4193A1243E264000FE6C75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD4193A9243E264100FE6C75 /* PBXTargetDependency */,
+			);
+			name = RubiAppTests;
+			productName = RubiAppTests;
+			productReference = AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ADC52B27243E15C700A62BA7 /* RubiApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADC52B3A243E15C700A62BA7 /* Build configuration list for PBXNativeTarget "RubiApp" */;
@@ -164,10 +214,14 @@
 		ADC52B20243E15C700A62BA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = ShuMatsuki;
 				TargetAttributes = {
+					AD4193A2243E264000FE6C75 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = ADC52B27243E15C700A62BA7;
+					};
 					ADC52B27243E15C700A62BA7 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -187,11 +241,19 @@
 			projectRoot = "";
 			targets = (
 				ADC52B27243E15C700A62BA7 /* RubiApp */,
+				AD4193A2243E264000FE6C75 /* RubiAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD4193A1243E264000FE6C75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADC52B26243E15C700A62BA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,6 +309,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD41939F243E264000FE6C75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD4193A6243E264100FE6C75 /* RubiAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADC52B24243E15C700A62BA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +327,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD4193A9243E264100FE6C75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADC52B27243E15C700A62BA7 /* RubiApp */;
+			targetProxy = AD4193A8243E264100FE6C75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ADC52B2F243E15C700A62BA7 /* Main.storyboard */ = {
@@ -278,6 +356,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AD4193AA243E264100FE6C75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RubiAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShuMatsuki.RubiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiApp.app/RubiApp";
+			};
+			name = Debug;
+		};
+		AD4193AB243E264100FE6C75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RubiAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShuMatsuki.RubiAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubiApp.app/RubiApp";
+			};
+			name = Release;
+		};
 		ADC52B38243E15C700A62BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,6 +551,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD4193AC243E264100FE6C75 /* Build configuration list for PBXNativeTarget "RubiAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD4193AA243E264100FE6C75 /* Debug */,
+				AD4193AB243E264100FE6C75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ADC52B23243E15C700A62BA7 /* Build configuration list for PBXProject "RubiApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
