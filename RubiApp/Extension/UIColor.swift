@@ -11,4 +11,5 @@ import UIKit
 extension UIColor {
     static let theme = #colorLiteral(red: 0.2581312358, green: 0.5166093707, blue: 0.9669563174, alpha: 1)
     static let backgroud = #colorLiteral(red: 0.939709425, green: 0.9355689883, blue: 0.9387467504, alpha: 1)
+    static let navigaionTitle = #colorLiteral(red: 0.3999670744, green: 0.4000185132, blue: 0.3999494314, alpha: 1)
 }

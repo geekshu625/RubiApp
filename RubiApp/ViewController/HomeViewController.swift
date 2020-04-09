@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Rubi翻訳"
         self.view.backgroundColor = .backgroud
     }
     

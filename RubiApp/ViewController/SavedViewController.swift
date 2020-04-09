@@ -14,6 +14,7 @@ class SavedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "保存済み"
     }
 
 }

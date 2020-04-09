@@ -8,10 +8,18 @@
 
 import UIKit
 
-class CustomNavigationBar: UINavigationBar {
+class HomeNavigationBar: UINavigationBar {
     override func awakeFromNib() {
         self.isTranslucent = false
         self.barTintColor = .theme
         self.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+}
+
+class SavedNavigationBar: UINavigationBar {
+    override func awakeFromNib() {
+        self.isTranslucent = false
+        self.barTintColor = .backgroud
+        self.titleTextAttributes = [.foregroundColor: UIColor.navigaionTitle]
     }
 }
