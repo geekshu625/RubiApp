@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var changedTextLabel: SubLabelStyle!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var resultTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

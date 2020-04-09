@@ -143,11 +143,11 @@
                                     <constraint firstAttribute="width" secondItem="lhg-Js-RMQ" secondAttribute="height" multiplier="374:335" constant="-6.6985074626865639" id="d6T-4C-SHo"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PD8-wv-lUZ">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="PD8-wv-lUZ">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PD8-wv-lUZ" id="cgp-p7-ahA">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -194,8 +194,8 @@
                         <outlet property="copyButton" destination="KN7-Vn-lbB" id="9LV-Bt-bJz"/>
                         <outlet property="indicator" destination="QVQ-mx-bMH" id="MlP-ZW-aJk"/>
                         <outlet property="pasteButton" destination="w0G-V5-NFJ" id="Qi1-3n-iLI"/>
+                        <outlet property="resultTableView" destination="lhg-Js-RMQ" id="y41-PB-ECU"/>
                         <outlet property="shareButton" destination="tTH-kN-KHi" id="pG2-Tf-iu1"/>
-                        <outlet property="tableView" destination="lhg-Js-RMQ" id="0Vp-5u-IbI"/>
                         <outlet property="textView" destination="WvL-EP-m0N" id="OoZ-0R-sMi"/>
                     </connections>
                 </viewController>

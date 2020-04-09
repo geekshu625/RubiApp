@@ -20,6 +20,8 @@
 		AD4193C3243EB7A100FE6C75 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */; };
 		AD4193C5243EC3C400FE6C75 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193C4243EC3C400FE6C75 /* UILabel.swift */; };
 		AD4193C7243EC44900FE6C75 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193C6243EC44900FE6C75 /* UITextView.swift */; };
+		AD4193CC243ED85200FE6C75 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193CA243ED85200FE6C75 /* ResultTableViewCell.swift */; };
+		AD4193CD243ED85200FE6C75 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -53,6 +55,8 @@
 		AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		AD4193C4243EC3C400FE6C75 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		AD4193C6243EC44900FE6C75 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		AD4193CA243ED85200FE6C75 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		AD41939C243E22EC00FE6C75 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD4193CA243ED85200FE6C75 /* ResultTableViewCell.swift */,
+				AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4193CD243ED85200FE6C75 /* ResultTableViewCell.xib in Resources */,
 				ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */,
 				AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */,
 				ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */,
@@ -353,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD4193CC243ED85200FE6C75 /* ResultTableViewCell.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
 				AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */,
