@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="ResultTableViewCell" customModule="RubiApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かんじ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipc-l4-EE7" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                        <rect key="frame" x="15" y="15" width="90" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="Ahb-ln-h6i"/>
+                            <constraint firstAttribute="height" constant="15" id="Skw-cf-WF2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-zw-Mgg" customClass="MainLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                        <rect key="frame" x="15" y="35" width="255" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="7GT-rB-Vgm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Save_not" translatesAutoresizingMaskIntoConstraints="NO" id="XII-p0-yWI">
+                        <rect key="frame" x="334" y="37.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="aBD-Ck-qs8"/>
+                            <constraint firstAttribute="width" constant="25" id="gYU-ei-Ra1"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="8I0-MG-jly"/>
+                    <constraint firstAttribute="trailing" secondItem="XII-p0-yWI" secondAttribute="trailing" constant="15" id="AFi-pn-KHm"/>
+                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="GjO-lH-0Yu"/>
+                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VwR-sj-lLI"/>
+                    <constraint firstItem="XII-p0-yWI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="arm-4t-Gma"/>
+                    <constraint firstItem="XII-p0-yWI" firstAttribute="leading" secondItem="HOx-zw-Mgg" secondAttribute="trailing" constant="64" id="hyf-gR-wpo"/>
+                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="top" secondItem="Ipc-l4-EE7" secondAttribute="bottom" constant="5" id="wLb-l8-96n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="hiraganaLabel" destination="Ipc-l4-EE7" id="tZT-qf-CXq"/>
+                <outlet property="kanziLabel" destination="HOx-zw-Mgg" id="TcZ-sB-iIa"/>
+                <outlet property="saveImageView" destination="XII-p0-yWI" id="a17-SX-4S2"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Save_not" width="50" height="50"/>
+    </resources>
+</document>
