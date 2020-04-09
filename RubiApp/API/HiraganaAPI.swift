@@ -1,0 +1,20 @@
+//
+//  HiraganaAPI.swift
+//  RubiApp
+//
+//  Created by 松木周 on 2020/04/09.
+//  Copyright © 2020 ShuMatsuki. All rights reserved.
+//
+
+import Foundation
+
+final class HiraganaAPI {
+    
+    struct PostKanzi: APIRequest {
+        typealias ResponseObject = Hiragana
+        
+        var path: String {
+            return "https://api.apigw.smt.docomo.ne.jp/gooLanguageAnalysis/v1/hiragana?APIKEY=\(APIKey)"
+        }
+    }
+}

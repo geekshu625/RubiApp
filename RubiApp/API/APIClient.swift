@@ -8,10 +8,18 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
-class HiraganaAPIClient: HiraganaAPIClientProtocol {
+class HiraganaAPIClient {
     
-    func post(completion: @escaping (([Hiragana]?) -> Void)) {
+    func post<Request: APIRequest>(request: Request) -> Observable<Request.ResponseObject> {
+        
+        return Observable.create { [weak self] observer -> Disposable in
+            guard let `self` = self else { return Disposables.create {} }
+
+            return Disposables.create {
+            }
+        }
     }
-    
 }
+
