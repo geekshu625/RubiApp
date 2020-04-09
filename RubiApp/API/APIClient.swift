@@ -12,7 +12,7 @@ import RxSwift
 
 class HiraganaAPIClient {
     
-    func post<Request: APIRequest>(request: Request) -> Observable<Request.ResponseObject> {
+    func call<Request: APIRequest>(request: Request) -> Observable<Request.ResponseObject> {
         
         return Observable.create { [weak self] observer -> Disposable in
             guard let `self` = self else { return Disposables.create {} }
