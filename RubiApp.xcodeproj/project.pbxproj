@@ -27,6 +27,7 @@
 		AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D2243EFC2000FE6C75 /* APIRequest.swift */; };
 		AD4193D5243F08A900FE6C75 /* HiraganaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */; };
 		AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D6243F0A9600FE6C75 /* APIKey.swift */; };
+		AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D8243F101D00FE6C75 /* BodyData.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -67,6 +68,7 @@
 		AD4193D2243EFC2000FE6C75 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaAPI.swift; sourceTree = "<group>"; };
 		AD4193D6243F0A9600FE6C75 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		AD4193D8243F101D00FE6C75 /* BodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyData.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
 				AD4193D2243EFC2000FE6C75 /* APIRequest.swift */,
 				AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */,
+				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
 				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
 			);
 			path = API;
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4193CC243ED85200FE6C75 /* ResultTableViewCell.swift in Sources */,
+				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
