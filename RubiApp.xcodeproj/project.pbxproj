@@ -24,6 +24,11 @@
 		AD4193CD243ED85200FE6C75 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */; };
 		AD4193CF243EDBA200FE6C75 /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193CE243EDBA200FE6C75 /* Saved.storyboard */; };
 		AD4193D1243EDCB600FE6C75 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D0243EDCB600FE6C75 /* SavedViewController.swift */; };
+		AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D2243EFC2000FE6C75 /* APIRequest.swift */; };
+		AD4193D5243F08A900FE6C75 /* HiraganaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */; };
+		AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D6243F0A9600FE6C75 /* APIKey.swift */; };
+		AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D8243F101D00FE6C75 /* BodyData.swift */; };
+		AD4193DB243F295800FE6C75 /* HiraganaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DA243F295800FE6C75 /* HiraganaModel.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -61,6 +66,11 @@
 		AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		AD4193CE243EDBA200FE6C75 /* Saved.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
 		AD4193D0243EDCB600FE6C75 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		AD4193D2243EFC2000FE6C75 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaAPI.swift; sourceTree = "<group>"; };
+		AD4193D6243F0A9600FE6C75 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		AD4193D8243F101D00FE6C75 /* BodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyData.swift; sourceTree = "<group>"; };
+		AD4193DA243F295800FE6C75 /* HiraganaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaModel.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +113,10 @@
 				AD4193AD243E29BB00FE6C75 /* HiraganaCodable.swift */,
 				AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */,
 				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
+				AD4193D2243EFC2000FE6C75 /* APIRequest.swift */,
+				AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */,
+				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
+				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -122,6 +136,7 @@
 		AD41939A243E22E200FE6C75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,17 +383,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4193CC243ED85200FE6C75 /* ResultTableViewCell.swift in Sources */,
+				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
+				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
+				AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */,
 				AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */,
 				AD4193BF243E3E8F00FE6C75 /* UIFont.swift in Sources */,
 				AD4193C5243EC3C400FE6C75 /* UILabel.swift in Sources */,
 				AD4193D1243EDCB600FE6C75 /* SavedViewController.swift in Sources */,
 				AD4193C3243EB7A100FE6C75 /* CustomNavigationBar.swift in Sources */,
+				AD4193D5243F08A900FE6C75 /* HiraganaAPI.swift in Sources */,
 				AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */,
 				AD4193C7243EC44900FE6C75 /* UITextView.swift in Sources */,
 				AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */,
 				ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */,
+				AD4193DB243F295800FE6C75 /* HiraganaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
