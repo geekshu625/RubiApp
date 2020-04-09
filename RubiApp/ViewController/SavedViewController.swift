@@ -9,6 +9,9 @@
 import UIKit
 
 class SavedViewController: UIViewController {
+    
+    @IBOutlet weak var savedTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
