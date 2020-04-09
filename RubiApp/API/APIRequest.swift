@@ -14,6 +14,7 @@ protocol APIRequest {
     
     var path: String { get }
     var method: HTTPMethod { get }
+    var body: BodyData { get }
 }
 
 extension APIRequest {
