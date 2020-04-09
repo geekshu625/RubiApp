@@ -15,12 +15,189 @@
                     <view key="view" contentMode="scaleToFill" id="YVC-WY-wOH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-Qe-3BJ">
+                                <rect key="frame" x="20" y="108" width="374" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM2-Mi-2pW" customClass="MainLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="41" width="122" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Change" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-8B-v8s">
+                                        <rect key="frame" x="167" y="36" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="UFu-X9-Ruu"/>
+                                            <constraint firstAttribute="height" constant="40" id="hwj-yV-KrG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひらがな" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51P-8S-gay" customClass="MainLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                        <rect key="frame" x="242" y="41" width="122" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="51P-8S-gay" secondAttribute="trailing" constant="10" id="LC9-rX-igJ"/>
+                                    <constraint firstItem="V6t-8B-v8s" firstAttribute="centerX" secondItem="4rI-Qe-3BJ" secondAttribute="centerX" id="MI8-HP-hft"/>
+                                    <constraint firstAttribute="width" secondItem="4rI-Qe-3BJ" secondAttribute="height" multiplier="187:56" id="SgA-2L-4RJ"/>
+                                    <constraint firstItem="51P-8S-gay" firstAttribute="leading" secondItem="V6t-8B-v8s" secondAttribute="trailing" constant="35" id="ZRi-6E-P78"/>
+                                    <constraint firstItem="51P-8S-gay" firstAttribute="centerY" secondItem="4rI-Qe-3BJ" secondAttribute="centerY" id="ajm-i8-AOV"/>
+                                    <constraint firstItem="PM2-Mi-2pW" firstAttribute="leading" secondItem="4rI-Qe-3BJ" secondAttribute="leading" constant="10" id="cnK-hn-BlY"/>
+                                    <constraint firstItem="PM2-Mi-2pW" firstAttribute="centerY" secondItem="4rI-Qe-3BJ" secondAttribute="centerY" id="iny-zh-s3c"/>
+                                    <constraint firstItem="V6t-8B-v8s" firstAttribute="leading" secondItem="PM2-Mi-2pW" secondAttribute="trailing" constant="35" id="sIF-tJ-2bi"/>
+                                    <constraint firstItem="V6t-8B-v8s" firstAttribute="centerY" secondItem="4rI-Qe-3BJ" secondAttribute="centerY" id="zeI-c9-J9V"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66D-AS-tIE">
+                                <rect key="frame" x="20" y="235" width="374" height="182"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WvL-EP-m0N" customClass="MainTextViewStyle" customModule="RubiApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="96"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WvL-EP-m0N" secondAttribute="height" multiplier="187:48" id="gRc-ed-9zE"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="snw-cO-gnV">
+                                        <rect key="frame" x="0.0" y="96" width="374" height="77"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-RU-g18">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="77"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0G-V5-NFJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="49.5"/>
+                                                        <state key="normal" image="Paste"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ペースト" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkM-ra-iDN" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="57.5" width="98" height="19.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="19.5" id="Sri-cE-OLh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-VT-aSH">
+                                                <rect key="frame" x="138" y="0.0" width="98" height="77"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN7-Vn-lbB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="54"/>
+                                                        <state key="normal" image="Copy"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コピー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjQ-IC-WRz" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="61" width="98" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-xu-2QW">
+                                                <rect key="frame" x="276" y="0.0" width="98" height="77"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTH-kN-KHi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="49.5"/>
+                                                        <state key="normal" image="Transfer"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6O-UP-TXc" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="57.5" width="98" height="19.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="19.5" id="KNx-Av-j06"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="snw-cO-gnV" secondAttribute="height" multiplier="373:77" id="gkX-wP-Xbb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="WvL-EP-m0N" firstAttribute="leading" secondItem="66D-AS-tIE" secondAttribute="leading" id="DPS-aC-HUm"/>
+                                    <constraint firstItem="snw-cO-gnV" firstAttribute="leading" secondItem="66D-AS-tIE" secondAttribute="leading" id="F0r-AF-b8A"/>
+                                    <constraint firstAttribute="trailing" secondItem="snw-cO-gnV" secondAttribute="trailing" id="TIP-Gw-acc"/>
+                                    <constraint firstItem="WvL-EP-m0N" firstAttribute="top" secondItem="66D-AS-tIE" secondAttribute="top" id="Uhd-Mh-jD9"/>
+                                    <constraint firstAttribute="width" secondItem="66D-AS-tIE" secondAttribute="height" multiplier="187:91" id="Vv9-sw-AKe"/>
+                                    <constraint firstAttribute="trailing" secondItem="WvL-EP-m0N" secondAttribute="trailing" id="cBy-gj-AVw"/>
+                                    <constraint firstItem="snw-cO-gnV" firstAttribute="top" secondItem="WvL-EP-m0N" secondAttribute="bottom" id="rDU-0z-J89"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lhg-Js-RMQ">
+                                <rect key="frame" x="20" y="472" width="374" height="341"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lhg-Js-RMQ" secondAttribute="height" multiplier="374:335" constant="-6.6985074626865639" id="d6T-4C-SHo"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PD8-wv-lUZ">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PD8-wv-lUZ" id="cgp-p7-ahA">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-mx-bMH">
+                                <rect key="frame" x="197" y="437" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="GoW-YY-VnM"/>
+                                    <constraint firstAttribute="width" constant="20" id="Jky-OO-vKQ"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-ca-gWL" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                                <rect key="frame" x="150" y="432" width="114" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4rI-Qe-3BJ" firstAttribute="leading" secondItem="2Yc-xp-RGc" secondAttribute="leading" constant="20" id="2E5-Xk-ZHN"/>
+                            <constraint firstItem="QVQ-mx-bMH" firstAttribute="centerX" secondItem="YVC-WY-wOH" secondAttribute="centerX" id="7HU-yS-K2j"/>
+                            <constraint firstItem="fmr-ca-gWL" firstAttribute="top" secondItem="66D-AS-tIE" secondAttribute="bottom" constant="15" id="8TZ-Ma-LYk"/>
+                            <constraint firstItem="4rI-Qe-3BJ" firstAttribute="top" secondItem="2Yc-xp-RGc" secondAttribute="top" constant="20" id="8nC-YZ-ss9"/>
+                            <constraint firstItem="2Yc-xp-RGc" firstAttribute="trailing" secondItem="fmr-ca-gWL" secondAttribute="trailing" constant="150" id="Jgi-cq-Neb"/>
+                            <constraint firstItem="66D-AS-tIE" firstAttribute="top" secondItem="4rI-Qe-3BJ" secondAttribute="bottom" constant="15" id="MgL-QS-Ygi"/>
+                            <constraint firstItem="2Yc-xp-RGc" firstAttribute="trailing" secondItem="66D-AS-tIE" secondAttribute="trailing" constant="20" id="T8u-bL-R0u"/>
+                            <constraint firstItem="QVQ-mx-bMH" firstAttribute="top" secondItem="66D-AS-tIE" secondAttribute="bottom" constant="20" id="UnV-pT-dxN"/>
+                            <constraint firstItem="lhg-Js-RMQ" firstAttribute="leading" secondItem="2Yc-xp-RGc" secondAttribute="leading" constant="20" id="i7i-SE-04C"/>
+                            <constraint firstItem="fmr-ca-gWL" firstAttribute="leading" secondItem="2Yc-xp-RGc" secondAttribute="leading" constant="150" id="mUu-LP-kyT"/>
+                            <constraint firstItem="2Yc-xp-RGc" firstAttribute="trailing" secondItem="4rI-Qe-3BJ" secondAttribute="trailing" constant="20" id="o68-S8-Lbc"/>
+                            <constraint firstItem="2Yc-xp-RGc" firstAttribute="trailing" secondItem="lhg-Js-RMQ" secondAttribute="trailing" constant="20" id="oeX-gI-Ac0"/>
+                            <constraint firstItem="66D-AS-tIE" firstAttribute="leading" secondItem="2Yc-xp-RGc" secondAttribute="leading" constant="20" id="pEn-zR-1Z5"/>
+                            <constraint firstItem="lhg-Js-RMQ" firstAttribute="top" secondItem="QVQ-mx-bMH" secondAttribute="bottom" constant="15" id="vNI-EG-hOv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Yc-xp-RGc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="Home" id="otJ-AH-IHH"/>
                     <navigationItem key="navigationItem" id="4Ee-0C-cJM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="changedTextLabel" destination="fmr-ca-gWL" id="7cs-Lb-DaR"/>
+                        <outlet property="copyButton" destination="KN7-Vn-lbB" id="9LV-Bt-bJz"/>
+                        <outlet property="indicator" destination="QVQ-mx-bMH" id="MlP-ZW-aJk"/>
+                        <outlet property="pasteButton" destination="w0G-V5-NFJ" id="Qi1-3n-iLI"/>
+                        <outlet property="shareButton" destination="tTH-kN-KHi" id="pG2-Tf-iu1"/>
+                        <outlet property="tableView" destination="lhg-Js-RMQ" id="0Vp-5u-IbI"/>
+                        <outlet property="textView" destination="WvL-EP-m0N" id="OoZ-0R-sMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92G-4v-bsy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,6 +223,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Change" width="25" height="25"/>
+        <image name="Copy" width="50" height="50"/>
         <image name="Home" width="24" height="24"/>
+        <image name="Paste" width="50" height="50"/>
+        <image name="Transfer" width="50" height="50"/>
     </resources>
 </document>

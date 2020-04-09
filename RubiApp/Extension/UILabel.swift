@@ -19,3 +19,16 @@ import UIKit
     }
     
 }
+
+@IBDesignable class SubLabelStyle: UILabel {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.font = UIFont.subTitle()
+        self.textAlignment = .center
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
+    
+}

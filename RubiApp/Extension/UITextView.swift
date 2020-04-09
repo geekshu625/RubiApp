@@ -10,8 +10,6 @@ import UIKit
 
 @IBDesignable class MainTextViewStyle: UITextView {
     override func awakeFromNib() {
-        self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.borderWidth = 1.0
         self.font = .subTitle()
     }
 }
