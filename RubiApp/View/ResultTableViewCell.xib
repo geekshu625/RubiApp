@@ -56,9 +56,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="favoriteImageView" destination="XII-p0-yWI" id="erY-Co-Ko3"/>
                 <outlet property="hiraganaLabel" destination="Ipc-l4-EE7" id="tZT-qf-CXq"/>
                 <outlet property="kanziLabel" destination="HOx-zw-Mgg" id="TcZ-sB-iIa"/>
+                <outlet property="saveImageView" destination="XII-p0-yWI" id="a17-SX-4S2"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
