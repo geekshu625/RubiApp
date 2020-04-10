@@ -9,5 +9,6 @@ target 'RubiApp' do
  pod 'RxDataSources'
  pod 'RxOptional'
  pod 'RxWebKit' 
+ pod 'SVProgressHUD'
 
 end
