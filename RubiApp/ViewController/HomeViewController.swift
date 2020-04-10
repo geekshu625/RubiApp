@@ -28,7 +28,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         guard let wSelf = self,
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell
         else { return UITableViewCell() }
-        cell.kanziLabel.text = item.hiragana.converted
+        cell.kanziLabel.text = item.kanzi
+        cell.hiraganaLabel.text = item.hiragana.converted
         return cell
         
     })
@@ -56,6 +57,12 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         viewModel.isLoading
         .drive(indicator.rx.isAnimating)
         .disposed(by: disposeBag)
+        
+        viewModel.resultData
+            .drive(onNext: { [weak self](hiragana) in
+                self!.changedTextLabel.text = hiragana
+            })
+            .disposed(by: disposeBag)
         
         pasteButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
@@ -101,7 +108,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         textField.rx.controlEvent(.editingDidBegin).asDriver()
             .drive(onNext: { [weak self] in
                 self?.textField.text = ""
-                self?.changedTextLabel.text = ""
             })
             .disposed(by: disposeBag)
         

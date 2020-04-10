@@ -14,6 +14,7 @@ import RxDataSources
 struct HiraganaData{
     let id = UUID().uuidString
     let hiragana: Hiragana
+    let kanzi: String
 }
 
 extension HiraganaData: IdentifiableType, Equatable{
@@ -31,14 +32,27 @@ class HomeViewModel: ListViewModelProtocol {
     var dataObservable: Observable<[SectionModel]> {
         return dataRelay.asObservable()
     }
+    private let dataRelay = BehaviorRelay<[SectionModel]>(value: [])
     
+    //インディケーターの状態を保持している
     lazy var isLoading: SharedSequence<DriverSharingStrategy, Bool> = {
         return self.isLoadingBehavior.asDriver()
     }()
     private var isLoadingBehavior = BehaviorRelay<Bool>(value: false)
+    
+    //変換したひらがなを保持している
+    lazy var resultData: SharedSequence<DriverSharingStrategy, String> = {
+        return self.resultDataBehavior.asDriver()
+    }()
+    private var resultDataBehavior = BehaviorRelay<String>(value: "")
+    
     let alertTrigger = PublishSubject<String>()
-    private let dataRelay = BehaviorRelay<[SectionModel]>(value: [])
     private let disposeBag = DisposeBag()
+    
+    init() {
+        self.isLoadingBehavior.accept(false)
+        self.resultDataBehavior.accept("")
+    }
     
     private func toSectionModel(shouldRefresh: Bool = false, type: Data) {
         var preItems = dataRelay.value.first?.items ?? []
@@ -50,21 +64,14 @@ class HomeViewModel: ListViewModelProtocol {
     }
     
     func post(request_id: String, sentence: String, output_type: String) {
-        remove()
+        self.isLoadingBehavior.accept(true)
         HiraganaModel.post(request_id: request_id, sentence: sentence, output_type: output_type)
             .subscribe(onNext: { (data) in
-                let data = Data(hiragana: data)
+                self.isLoadingBehavior.accept(false)
+                self.resultDataBehavior.accept(data.converted)
+                let data = Data(hiragana: data, kanzi: sentence)
                 self.toSectionModel(type: data)
             }).disposed(by: disposeBag)
-    }
-
-    func remove() {
-        var preItems = dataRelay.value.first?.items ?? []
-        guard preItems.count > 0 else {return}
-        preItems.removeAll()
-        let section = 0
-        let sectionModel = SectionModel(model: section, items: preItems)
-        dataRelay.accept([sectionModel])
     }
     
     //TODO: エラー処理を追加
