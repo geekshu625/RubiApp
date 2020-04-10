@@ -18,49 +18,50 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かんじ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipc-l4-EE7" customClass="SubLabelStyle" customModule="RubiApp" customModuleProvider="target">
-                        <rect key="frame" x="15" y="15" width="90" height="15"/>
+                        <rect key="frame" x="18" y="15" width="338" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="Ahb-ln-h6i"/>
-                            <constraint firstAttribute="height" constant="15" id="Skw-cf-WF2"/>
+                            <constraint firstAttribute="width" secondItem="Ipc-l4-EE7" secondAttribute="height" multiplier="113:5" id="xXO-fH-NJ9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-zw-Mgg" customClass="MainLabelStyle" customModule="RubiApp" customModuleProvider="target">
-                        <rect key="frame" x="15" y="35" width="255" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="漢字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOx-zw-Mgg" customClass="MainLabelStyle" customModule="RubiApp" customModuleProvider="target">
+                        <rect key="frame" x="15" y="35" width="291" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="7GT-rB-Vgm"/>
+                            <constraint firstAttribute="height" constant="30" id="Z6M-Ip-hOw"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Save_not" translatesAutoresizingMaskIntoConstraints="NO" id="XII-p0-yWI">
-                        <rect key="frame" x="334" y="37.5" width="25" height="25"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgj-jO-MAc">
+                        <rect key="frame" x="314" y="30" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="aBD-Ck-qs8"/>
-                            <constraint firstAttribute="width" constant="25" id="gYU-ei-Ra1"/>
+                            <constraint firstAttribute="height" constant="40" id="5fk-Lm-58f"/>
+                            <constraint firstAttribute="width" constant="40" id="XKp-us-WVw"/>
                         </constraints>
-                    </imageView>
+                        <state key="normal" image="Save_not"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="8I0-MG-jly"/>
-                    <constraint firstAttribute="trailing" secondItem="XII-p0-yWI" secondAttribute="trailing" constant="15" id="AFi-pn-KHm"/>
-                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="GjO-lH-0Yu"/>
-                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VwR-sj-lLI"/>
-                    <constraint firstItem="XII-p0-yWI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="arm-4t-Gma"/>
-                    <constraint firstItem="XII-p0-yWI" firstAttribute="leading" secondItem="HOx-zw-Mgg" secondAttribute="trailing" constant="64" id="hyf-gR-wpo"/>
-                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="top" secondItem="Ipc-l4-EE7" secondAttribute="bottom" constant="5" id="wLb-l8-96n"/>
+                    <constraint firstItem="Xgj-jO-MAc" firstAttribute="leading" secondItem="HOx-zw-Mgg" secondAttribute="trailing" constant="18" id="ELT-xR-IoJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Ipc-l4-EE7" secondAttribute="trailing" constant="18" id="JZ4-7i-rX4"/>
+                    <constraint firstAttribute="trailing" secondItem="Xgj-jO-MAc" secondAttribute="trailing" constant="20" id="LDW-HZ-Prb"/>
+                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Po7-am-HN5"/>
+                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="RFq-Sz-b5p"/>
+                    <constraint firstItem="Xgj-jO-MAc" firstAttribute="top" secondItem="Ipc-l4-EE7" secondAttribute="bottom" id="cgD-4p-aHi"/>
+                    <constraint firstItem="HOx-zw-Mgg" firstAttribute="top" secondItem="Ipc-l4-EE7" secondAttribute="bottom" constant="5" id="orO-Th-A3o"/>
+                    <constraint firstItem="Ipc-l4-EE7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="yqF-Rw-wZb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="hiraganaLabel" destination="Ipc-l4-EE7" id="tZT-qf-CXq"/>
                 <outlet property="kanziLabel" destination="HOx-zw-Mgg" id="TcZ-sB-iIa"/>
-                <outlet property="saveImageView" destination="XII-p0-yWI" id="a17-SX-4S2"/>
+                <outlet property="saveButton" destination="Xgj-jO-MAc" id="Vhu-Uh-G7H"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+            <point key="canvasLocation" x="15.942028985507248" y="135.9375"/>
         </tableViewCell>
     </objects>
     <resources>

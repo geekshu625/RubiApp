@@ -12,7 +12,7 @@ class ResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hiraganaLabel: SubLabelStyle!
     @IBOutlet weak var kanziLabel: MainLabelStyle!
-    @IBOutlet weak var saveImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
 
     override func awakeFromNib() {
