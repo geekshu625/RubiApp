@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SafariServices
+import SVProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDelegate {
     
@@ -66,8 +67,9 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         copyButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 self?.dismissKeyBoard()
-                //完了アラートを表示
                 self?.pasteboard.setValue(self!.textField.text, forPasteboardType: "public.text")
+                SVProgressHUD.showSuccess(withStatus: "コピーに成功しました")
+                SVProgressHUD.dismiss(withDelay: 1.0)
             })
             .disposed(by: disposeBag)
         
@@ -76,7 +78,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
                 self!.dismissKeyBoard()
                 let text = self!.textField.text
                 if text?.count == 0 {
-                    //アラートを表示
                      self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
