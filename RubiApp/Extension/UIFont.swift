@@ -21,6 +21,11 @@ extension UIFont {
         createFont(isiPhone: 15, isiPad: 25, weight: .semibold)
     }
     
+    static func textFiledStyle() -> UIFont {
+        createFont(isiPhone: 20, isiPad: 25, weight: .semibold)
+    }
+    
+    
     static func createFont(isiPhone: CGFloat, isiPad: CGFloat, weight: UIFont.Weight) -> UIFont{
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
