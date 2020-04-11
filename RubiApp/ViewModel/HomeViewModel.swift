@@ -11,22 +11,22 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct HiraganaData{
+struct HomeTableViewData{
     let id = UUID().uuidString
     let hiragana: Hiragana
     let kanzi: String
 }
 
-extension HiraganaData: IdentifiableType, Equatable{
+extension HomeTableViewData: IdentifiableType, Equatable{
     var identity: String {return id}
-    static func == (lhs: HiraganaData, rhs: HiraganaData) -> Bool {
+    static func == (lhs: HomeTableViewData, rhs: HomeTableViewData) -> Bool {
         return lhs.identity == rhs.identity
     }
 }
 
 class HomeViewModel: ListViewModelProtocol {
     
-    typealias Data = HiraganaData
+    typealias Data = HomeTableViewData
     typealias SectionModel = AnimatableSectionModel<Int, Data>
     
     var dataObservable: Observable<[SectionModel]> {

@@ -1,6 +1,11 @@
 PODS:
   - Alamofire (5.1.0)
   - Differentiator (4.0.1)
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+  - RealmSwift (4.4.0):
+    - Realm (= 4.4.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -21,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - RealmSwift
   - RxCocoa
   - RxDataSources
   - RxOptional
@@ -32,6 +38,8 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Differentiator
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxDataSources
     - RxOptional
@@ -43,6 +51,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  RealmSwift: 33656a42bd300959a081fc13347376bc478071af
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
@@ -51,6 +61,6 @@ SPEC CHECKSUMS:
   RxWebKit: a3085e7cd8b57182b452692686675702474014dd
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0d846117b1b8691adb0ed2e43f1bb00b75e99da0
+PODFILE CHECKSUM: 23d1f9ba85578126ce01f1ee3c4131f16cbfc64e
 
 COCOAPODS: 1.9.1
