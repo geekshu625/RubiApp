@@ -105,6 +105,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ResultTableView
             .drive(onNext: { [weak self] in
                 if self?.textField.text?.count == 0 {
                     self?.changedTextLabel.text = self!.alertSentence
+                    return
                 }
                 self?.viewModel.post(request_id: "record001", sentence: self!.textField.text!, output_type: "hiragana")
             })
