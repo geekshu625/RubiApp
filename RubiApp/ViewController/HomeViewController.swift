@@ -13,7 +13,7 @@ import RxDataSources
 import SafariServices
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, ResultTableViewCellDelegate{
+class HomeViewController: UIViewController, UITableViewDelegate{
     
     @IBOutlet weak var textField: MainTextFieldStyle!
     @IBOutlet weak var pasteButton: UIButton!
@@ -30,14 +30,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, ResultTableView
         else { return UITableViewCell() }
         cell.kanziLabel.text = item.kanzi
         cell.hiraganaLabel.text = item.hiragana.converted
-        cell.delegate = wSelf
+        cell.saveButton.rx.tap.asDriver()
+            .drive(onNext: { [weak self] in
+                
+            })
+            .disposed(by: cell.disposeBag)
         return cell
-        
     })
-    
-    func didTapSaveButton(tableViewCell: UITableViewCell, button: UIButton) {
-        //TODO:保存機能をつける
-    }
     
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()

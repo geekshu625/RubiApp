@@ -6,12 +6,13 @@
 //  Copyright © 2020 ShuMatsuki. All rights reserved.
 //
 
-import UIKit
+/*Cell上のボタンタップを検知する方法
+disposeBagオブジェクトはセルの再利用のたびに新しく生成する必要がある。
+ 参考：https://qiita.com/katafuchix/items/5909fa2d38b5f5455df1
+*/
 
-//HomeViewControllerに継承して、Cell側でクロージャー処理を受け取れるようにする
-protocol ResultTableViewCellDelegate {
-    func didTapSaveButton(tableViewCell: UITableViewCell, button: UIButton)
-}
+import UIKit
+import RxSwift
 
 class ResultTableViewCell: UITableViewCell {
     
@@ -19,20 +20,17 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var kanziLabel: MainLabelStyle!
     @IBOutlet weak var saveButton: UIButton!
     
-    var delegate: ResultTableViewCellDelegate?
+    var disposeBag = DisposeBag()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
+        self.disposeBag = DisposeBag()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func saveButtonTapped(button: UIButton) {
-        self.delegate?.didTapSaveButton(tableViewCell: self, button: button)
     }
 }
