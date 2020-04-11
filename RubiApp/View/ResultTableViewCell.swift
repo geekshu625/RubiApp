@@ -21,6 +21,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var saveButton: UIButton!
     
     var disposeBag = DisposeBag()
+    var isTap = false
 
     override func awakeFromNib() {
         super.awakeFromNib()

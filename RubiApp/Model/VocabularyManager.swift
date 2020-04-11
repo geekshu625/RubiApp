@@ -46,7 +46,7 @@ final class VocabularyManager {
     static func delete(vocabulary: Vocabulary) {
         do {
             try realm.write {
-                realm.delete(vocabulary)
+                realm.delete(realm.objects(Vocabulary.self).filter("id == '\(vocabulary.id)'"))
             }
         }
         catch _ {

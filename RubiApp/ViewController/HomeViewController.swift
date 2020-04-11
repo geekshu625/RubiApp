@@ -23,16 +23,25 @@ class HomeViewController: UIViewController, UITableViewDelegate{
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var resultTableView: UITableView!
     private let backgroundTapGesture = UITapGestureRecognizer()
+    private let CELL_ID = "ResultTableViewCell"
     
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
         guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.CELL_ID, for: indexPath) as? ResultTableViewCell
         else { return UITableViewCell() }
         cell.kanziLabel.text = item.kanzi
         cell.hiraganaLabel.text = item.hiragana.converted
         cell.saveButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
-                
+                cell.isTap.toggle()
+                let data = Vocabulary(value: ["hiragana": item.hiragana.converted, "kanzi": item.kanzi, "id": item.id])
+                if cell.isTap == true {
+                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
+                    VocabularyManager.add(vocabulary: data)
+                } else {
+                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
+                    VocabularyManager.delete(vocabulary: data)
+                }
             })
             .disposed(by: cell.disposeBag)
         return cell
@@ -51,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate{
         tabBarController?.tabBar.isTranslucent = false
         indicator.hidesWhenStopped = true
         
-        resultTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: "ResultTableViewCell")
+        resultTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
         resultTableView.tableFooterView = UIView()
         resultTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
         
