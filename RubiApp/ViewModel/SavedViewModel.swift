@@ -44,11 +44,13 @@ class SavedViewModel: ListViewModelProtocol {
     }
     
     func fetch() {
-        let vocabularies = VocabularyManager.getAll()
-        for vocabulary in vocabularies {
-            let data = Data(vocabulary: vocabulary)
-            self.toSectionModel(type: data)
-        }
+        VocabularyManager.getAll(disposeBag: disposeBag)
+            .subscribe(onNext: { (results) in
+                for vocabulary in results {
+                    let data = Data(vocabulary: vocabulary)
+                    self.toSectionModel(type: data)
+                }
+            }).disposed(by: disposeBag)
     }
     
     //Realmから削除

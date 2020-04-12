@@ -24,7 +24,8 @@ class SavedViewController: UIViewController, UITableViewDelegate{
         cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
         cell.saveButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
-                
+                let data = Vocabulary(value: ["hiragana": item.vocabulary.hiragana, "kanzi": item.vocabulary.kanzi, "id": item.vocabulary.id])
+                self?.viewModel.deleteVocabulary(vocabulary: data)
             })
             .disposed(by: cell.disposeBag)
         return cell

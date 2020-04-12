@@ -16,8 +16,15 @@ final class VocabularyManager {
     static let realm: Realm = try! Realm()
     
     // 全件取得
-    static func getAll() -> Results<Vocabulary> {
-        return realm.objects(Vocabulary.self).sorted(byKeyPath: "updatedAt", ascending: false)
+    static func getAll(disposeBag: DisposeBag) -> Observable<Results<Vocabulary>>{
+        return Observable.create { observer -> Disposable in
+            let vocabulary = realm.objects(Vocabulary.self).sorted(byKeyPath: "updatedAt", ascending: false)
+            Observable.collection(from: vocabulary)
+                .subscribe(onNext: { (result) in
+                    observer.onNext(result)
+                }).disposed(by: disposeBag)
+            return Disposables.create()
+        }
     }
     
     // 保存されているかどうかを確認する
