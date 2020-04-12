@@ -34,6 +34,7 @@
 		AD4193E12440566400FE6C75 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193E02440566400FE6C75 /* UITextField.swift */; };
 		AD41940A2441CBFF00FE6C75 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194092441CBFF00FE6C75 /* Vocabulary.swift */; };
 		AD41940C2441CCBE00FE6C75 /* VocabularyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */; };
+		AD4194102442F80500FE6C75 /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41940F2442F80500FE6C75 /* SavedViewModel.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		AD4193E02440566400FE6C75 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		AD4194092441CBFF00FE6C75 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyManager.swift; sourceTree = "<group>"; };
+		AD41940F2442F80500FE6C75 /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */,
+				AD41940F2442F80500FE6C75 /* SavedViewModel.swift */,
 				AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */,
 			);
 			path = ViewModel;
@@ -418,6 +421,7 @@
 				AD41940C2441CCBE00FE6C75 /* VocabularyManager.swift in Sources */,
 				AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */,
 				ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */,
+				AD4194102442F80500FE6C75 /* SavedViewModel.swift in Sources */,
 				AD4193DB243F295800FE6C75 /* HiraganaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,7 +41,7 @@
                         <viewLayoutGuide key="safeArea" id="fEh-4p-Zbf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="保存済み" image="Save_tab" id="Umo-nL-0SY"/>
-                    <navigationItem key="navigationItem" id="Y4u-25-GEc"/>
+                    <navigationItem key="navigationItem" title="保存済み" id="Y4u-25-GEc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="savedTableView" destination="8qH-S2-wBJ" id="5ox-oP-L6C"/>
