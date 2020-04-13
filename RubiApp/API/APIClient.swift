@@ -16,7 +16,7 @@ class HiraganaAPIClient {
         
         return Observable.create { [weak self] observer -> Disposable in
             guard let `self` = self else { return Disposables.create {} }
-            //TODO: リファクタリング
+            
             var urlRequest = URLRequest(url: URL(string: request.path)!)
             urlRequest.httpMethod = request.method.rawValue
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -24,18 +24,30 @@ class HiraganaAPIClient {
             
             let task = AF.upload(body!, with: urlRequest)
                 .response { (response) in
-                    guard let data = response.data else { return }
-                    do {
-                        //TODO: API側のエラー処理
-                        let hiragana = try JSONDecoder().decode(Hiragana.self, from: data)
+                    switch response.result {
+                    case .success(_):
+                        guard let data = response.data else { return }
+                        
+                        //APIのエラー処理
+                        if let errorModel = try? JSONDecoder().decode(APIErrorRooter.self, from: data) {
+                            let apiError = HiraganaAPIError.init(errorCode: errorModel.error.code)
+                            observer.onError(apiError)
+                        }
+                        
+                        let hiragana = try? JSONDecoder().decode(Hiragana.self, from: data)
                         DispatchQueue.main.async {
                             observer.onNext(hiragana as! Request.ResponseObject)
                         }
-                    } catch {
-                        //TODO: ネットワークのエラー処理を追加
+                        
+                    case .failure(let error):
+                        //ネットワークのエラー処理
+                        let connectingError = ConnectionError(errorCode: error._code)
+                        observer.on(.error(connectingError))
                     }
             }
+            
             task.resume()
+            
             return Disposables.create {
                 task.cancel()
             }
