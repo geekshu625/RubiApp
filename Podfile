@@ -11,5 +11,5 @@ target 'RubiApp' do
  pod 'RxWebKit' 
  pod 'SVProgressHUD'
  pod 'RealmSwift'
-
+ pod "RxRealm"
 end
