@@ -11,9 +11,10 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class SavedViewController: UIViewController, UITableViewDelegate{
+class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol{
     
     @IBOutlet weak var savedTableView: UITableView!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
         guard let wSelf = self,
@@ -44,10 +45,18 @@ class SavedViewController: UIViewController, UITableViewDelegate{
         
         viewModel = SavedViewModel()
         viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+        
+        deleteButton.rx.tap.asDriver()
+            .drive(onNext: { [weak self] in
+                self!.showAlert(title: "確認", message: "保存しているデータを全て削除してもいいですか？") {
+                    self!.viewModel.deleteAllVocabulary()
+                }
+            })
+        .disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetch()
+        viewModel.fetchAllVocabulary()
     }
 
 }
