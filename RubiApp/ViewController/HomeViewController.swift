@@ -36,11 +36,11 @@ class HomeViewController: UIViewController, UITableViewDelegate{
                 cell.isTap.toggle()
                 let data = Vocabulary(value: ["hiragana": item.hiragana.converted, "kanzi": item.kanzi, "id": item.id])
                 if cell.isTap == true {
+                    wSelf.viewModel.createVocabulary(vocabulary: data)
                     cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-                    VocabularyManager.add(vocabulary: data)
                 } else {
+                    wSelf.viewModel.deleteVocabulary(vocabulary: data)
                     cell.saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
-                    VocabularyManager.delete(vocabulary: data)
                 }
             })
             .disposed(by: cell.disposeBag)

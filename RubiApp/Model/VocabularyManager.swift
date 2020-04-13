@@ -8,13 +8,15 @@
 
 import Foundation
 import RealmSwift
+import RxSwift
+import RxRealm
 
 final class VocabularyManager {
     
-    static let realm: Realm = try! Realm()
-
+    static var realm: Realm = try! Realm()
+    
     // 全件取得
-    static func getAll() -> Results<Vocabulary> {
+    static func getAll() -> Results<Vocabulary>{
         return realm.objects(Vocabulary.self).sorted(byKeyPath: "updatedAt", ascending: false)
     }
     
