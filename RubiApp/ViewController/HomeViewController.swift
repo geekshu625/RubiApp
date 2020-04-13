@@ -33,24 +33,15 @@ class HomeViewController: UIViewController, UITableViewDelegate{
         cell.hiraganaLabel.text = item.hiragana.converted
         cell.saveButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
+                cell.isTap.toggle()
                 let data = Vocabulary(value: ["hiragana": item.hiragana.converted, "kanzi": item.kanzi, "id": item.id])
-                if cell.isTap == false {
+                if cell.isTap == true {
                     wSelf.viewModel.createVocabulary(vocabulary: data)
+                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
                 } else {
                     wSelf.viewModel.deleteVocabulary(vocabulary: data)
+                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
                 }
-                wSelf.viewModel.fetch(vocabulary: data)
-                wSelf.viewModel.isSaved.asDriver()
-                    .drive(onNext: { (bool) in
-                        cell.isTap = bool
-                        if bool == true {
-                            cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-                        } else {
-                            cell.saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
-                        }
-                    })
-                    .disposed(by: cell.disposeBag)
-                
             })
             .disposed(by: cell.disposeBag)
         return cell

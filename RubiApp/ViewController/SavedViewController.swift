@@ -22,12 +22,7 @@ class SavedViewController: UIViewController, UITableViewDelegate{
         cell.kanziLabel.text = item.vocabulary.kanzi
         cell.hiraganaLabel.text = item.vocabulary.hiragana
         cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-        cell.saveButton.rx.tap.asDriver()
-            .drive(onNext: { [weak self] in
-                let data = Vocabulary(value: ["hiragana": item.vocabulary.hiragana, "kanzi": item.vocabulary.kanzi, "id": item.vocabulary.id])
-                self?.viewModel.deleteVocabulary(vocabulary: data)
-            })
-            .disposed(by: cell.disposeBag)
+        cell.saveButton.isEnabled = false
         return cell
     })
     
@@ -48,6 +43,9 @@ class SavedViewController: UIViewController, UITableViewDelegate{
         
         viewModel = SavedViewModel()
         viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         viewModel.fetch()
     }
 

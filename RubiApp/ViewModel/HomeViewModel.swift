@@ -42,10 +42,11 @@ class HomeViewModel: ListViewModelProtocol {
     }()
     private var isLoadingBehavior = BehaviorRelay<Bool>(value: false)
     
-    lazy var isSaved: SharedSequence<DriverSharingStrategy, Bool> = {
-        return self.isSavedBehavior.asDriver()
-    }()
-    private var isSavedBehavior = BehaviorRelay<Bool>(value: false)
+    //保存しているかどうかの状態を保持している
+//    lazy var isSaved: SharedSequence<DriverSharingStrategy, Bool> = {
+//        return self.isSavedBehavior.asDriver()
+//    }()
+//    private var isSavedBehavior = BehaviorRelay<Bool>(value: SaveVocabulary(isSaved: false))
     
     //変換したひらがなを保持している
     lazy var resultData: SharedSequence<DriverSharingStrategy, String> = {
@@ -82,13 +83,13 @@ class HomeViewModel: ListViewModelProtocol {
     }
     
     //保存されているかどうかを取得
-    func fetch(vocabulary: Vocabulary) {
-        VocabularyManager.getIsSaved(vocabulary: vocabulary, disposeBag: disposeBag)
-            .subscribe(onNext: { (isSaved) in
-                self.isSavedBehavior.accept(isSaved)
-            })
-        .disposed(by: disposeBag)
-    }
+//    func fetch() {
+//        VocabularyManager.getIsSaved(disposeBag: disposeBag)
+//            .subscribe(onNext: { (saveVocablary) in
+//                self.isSavedBehavior.accept(saveVocablary)
+//            })
+//        .disposed(by: disposeBag)
+//    }
     
     //Realmに保存
     func createVocabulary(vocabulary: Vocabulary) {
@@ -99,7 +100,6 @@ class HomeViewModel: ListViewModelProtocol {
     func deleteVocabulary(vocabulary: Vocabulary) {
         VocabularyManager.delete(vocabulary: vocabulary)
     }
-    
     //TODO: エラー処理を追加
 
 }
