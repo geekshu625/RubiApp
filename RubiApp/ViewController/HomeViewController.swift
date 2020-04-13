@@ -13,18 +13,16 @@ import RxDataSources
 import SafariServices
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate{
+final class HomeViewController: UIViewController, UITableViewDelegate{
     
-    @IBOutlet weak var textField: MainTextFieldStyle!
-    @IBOutlet weak var pasteButton: UIButton!
-    @IBOutlet weak var copyButton: UIButton!
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var changedTextLabel: SubLabelStyle!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
-    @IBOutlet weak var resultTableView: UITableView!
-    private let backgroundTapGesture = UITapGestureRecognizer()
-    private let CELL_ID = "ResultTableViewCell"
-    
+    @IBOutlet private weak var textField: MainTextFieldStyle!
+    @IBOutlet private weak var pasteButton: UIButton!
+    @IBOutlet private weak var copyButton: UIButton!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var changedTextLabel: SubLabelStyle!
+    @IBOutlet private weak var indicator: UIActivityIndicatorView!
+    @IBOutlet private weak var resultTableView: UITableView!
+        
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
         guard let wSelf = self,
             let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.CELL_ID, for: indexPath) as? ResultTableViewCell
@@ -49,6 +47,8 @@ class HomeViewController: UIViewController, UITableViewDelegate{
     
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()
+    private let backgroundTapGesture = UITapGestureRecognizer()
+    private let CELL_ID = "ResultTableViewCell"
     private let pasteboard = UIPasteboard.general
     private let alertSentence = "😭文字を入力してください"
     
