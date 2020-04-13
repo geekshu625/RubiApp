@@ -41,9 +41,12 @@
                         <viewLayoutGuide key="safeArea" id="fEh-4p-Zbf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="保存済み" image="Save_tab" id="Umo-nL-0SY"/>
-                    <navigationItem key="navigationItem" title="保存済み" id="Y4u-25-GEc"/>
+                    <navigationItem key="navigationItem" title="保存済み" id="Y4u-25-GEc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="cCP-6i-aN1"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="deleteButton" destination="cCP-6i-aN1" id="XKR-2G-qk5"/>
                         <outlet property="savedTableView" destination="8qH-S2-wBJ" id="5ox-oP-L6C"/>
                     </connections>
                 </viewController>

@@ -43,7 +43,8 @@ class SavedViewModel: ListViewModelProtocol {
         dataRelay.accept([sectionModel])
     }
     
-    func fetch() {
+    //RealmDBから全データを取得する
+    func fetchAllVocabulary() {
         remove()
         let vocabularies = VocabularyManager.getAll()
         for i in vocabularies {
@@ -52,11 +53,18 @@ class SavedViewModel: ListViewModelProtocol {
         }
     }
     
-    //Realmから削除
+    //RealmDBから個別データ削除
     func deleteVocabulary(vocabulary: Vocabulary) {
         VocabularyManager.delete(vocabulary: vocabulary)
     }
     
+    //RealmDBから全データ削除
+    func deleteAllVocabulary() {
+        VocabularyManager.deleteAll()
+        remove()
+    }
+    
+    //データが2重追加されるのを防止するために、一度空のデータをストリームに流して白紙になるように上書きする
     private func remove() {
         var preItems = dataRelay.value.first?.items ?? []
         guard preItems.count > 0 else {return}
@@ -65,7 +73,5 @@ class SavedViewModel: ListViewModelProtocol {
         let sectionModel = SectionModel(model: section, items: preItems)
         dataRelay.accept([sectionModel])
     }
-    
-    //TODO: エラー処理を追加
 
 }
