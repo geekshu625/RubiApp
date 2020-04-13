@@ -35,6 +35,8 @@
 		AD41940A2441CBFF00FE6C75 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194092441CBFF00FE6C75 /* Vocabulary.swift */; };
 		AD41940C2441CCBE00FE6C75 /* VocabularyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */; };
 		AD4194102442F80500FE6C75 /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41940F2442F80500FE6C75 /* SavedViewModel.swift */; };
+		AD419412244493D800FE6C75 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD419411244493D800FE6C75 /* APIError.swift */; };
+		AD4194142444965100FE6C75 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194132444965100FE6C75 /* ConnectionError.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -83,6 +85,8 @@
 		AD4194092441CBFF00FE6C75 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
 		AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyManager.swift; sourceTree = "<group>"; };
 		AD41940F2442F80500FE6C75 /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		AD419411244493D800FE6C75 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AD4194132444965100FE6C75 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */,
 				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
 				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
+				AD419411244493D800FE6C75 /* APIError.swift */,
+				AD4194132444965100FE6C75 /* ConnectionError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -405,8 +411,10 @@
 				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
 				AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
+				AD419412244493D800FE6C75 /* APIError.swift in Sources */,
 				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
+				AD4194142444965100FE6C75 /* ConnectionError.swift in Sources */,
 				AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */,
 				AD41940A2441CBFF00FE6C75 /* Vocabulary.swift in Sources */,
 				AD4193AE243E29BB00FE6C75 /* HiraganaCodable.swift in Sources */,

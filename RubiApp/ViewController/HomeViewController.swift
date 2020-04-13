@@ -130,6 +130,13 @@ class HomeViewController: UIViewController, UITableViewDelegate{
                 self?.dismissKeyBoard()
             })
         .disposed(by: disposeBag)
+        
+        //通信時にエラーが発生した場合にアラートを表示
+        viewModel.alertTrigger.asObservable()
+            .bind { (message) in
+                self.showAlert(message: message)
+            }
+            .disposed(by: disposeBag)
     
     }
     
@@ -141,6 +148,13 @@ class HomeViewController: UIViewController, UITableViewDelegate{
     
     private func dismissKeyBoard() {
         self.view.endEditing(false)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let defAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

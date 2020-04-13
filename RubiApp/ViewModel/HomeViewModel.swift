@@ -79,7 +79,11 @@ class HomeViewModel: ListViewModelProtocol {
                 self.resultDataBehavior.accept(data.converted)
                 let data = Data(hiragana: data, kanzi: sentence)
                 self.toSectionModel(type: data)
-            }).disposed(by: disposeBag)
+            },onError: { (error) in
+                self.bindError(error)
+                self.isLoadingBehavior.accept(false)
+            })
+            .disposed(by: disposeBag)
     }
     
     //保存されているかどうかを取得
@@ -101,5 +105,14 @@ class HomeViewModel: ListViewModelProtocol {
         VocabularyManager.delete(vocabulary: vocabulary)
     }
     //TODO: エラー処理を追加
-
+    private func bindError(_ error: Error) {
+        switch error {
+        case let error as HiraganaAPIError:
+            self.alertTrigger.onNext(error.message)
+        case let error as ConnectionError:
+            self.alertTrigger.onNext(error.message)
+        default:
+            self.alertTrigger.onNext(error.localizedDescription)
+        }
+    }
 }
