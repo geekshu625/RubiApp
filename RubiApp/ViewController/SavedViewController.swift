@@ -11,10 +11,10 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol{
+final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol{
     
-    @IBOutlet weak var savedTableView: UITableView!
-    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    @IBOutlet private weak var savedTableView: UITableView!
+    @IBOutlet private weak var deleteButton: UIBarButtonItem!
     
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
         guard let wSelf = self,

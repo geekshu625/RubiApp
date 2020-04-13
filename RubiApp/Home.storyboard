@@ -114,7 +114,7 @@
                                             <constraint firstAttribute="width" secondItem="snw-cO-gnV" secondAttribute="height" multiplier="34:7" id="GG3-wo-RBE"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-K5-rfV" customClass="MainTextFieldStyle" customModule="RubiApp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="るびを振りたい漢字を入力して下さい" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-K5-rfV" customClass="MainTextFieldStyle" customModule="RubiApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="86.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BR9-K5-rfV" secondAttribute="height" multiplier="95:22" id="IRG-nN-ctI"/>
