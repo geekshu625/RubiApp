@@ -16,9 +16,9 @@ import RxSwift
 
 class ResultTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var hiraganaLabel: SubLabelStyle!
-    @IBOutlet weak var kanziLabel: MainLabelStyle!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet private weak var hiraganaLabel: SubLabelStyle!
+    @IBOutlet private weak var kanziLabel: MainLabelStyle!
+    @IBOutlet private weak var saveButton: UIButton!
     
     var disposeBag = DisposeBag()
     var isTap = false
