@@ -40,6 +40,7 @@ class SavedViewController: UIViewController, UITableViewDelegate{
         savedTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
         savedTableView.tableFooterView = UIView()
         savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        savedTableView.allowsSelection = false
         
         viewModel = SavedViewModel()
         viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
