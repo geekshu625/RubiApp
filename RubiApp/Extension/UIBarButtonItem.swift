@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxSwift
+import UIKit
 
 //UIBarButtonItemに対してRxSwiftでバインディングできないので補強
 extension Reactive where Base: UIBarButtonItem {
