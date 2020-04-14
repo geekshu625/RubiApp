@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,7 +42,6 @@
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
-		BFC366F9430438BB1E2551A9 /* Pods_RubiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD334CB9FB8D9375F1BB2884 /* Pods_RubiApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41ADC2EEFC06CCA8F4109D15 /* Pods-RubiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiApp.debug.xcconfig"; path = "Target Support Files/Pods-RubiApp/Pods-RubiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4193A5243E264100FE6C75 /* RubiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiAppTests.swift; sourceTree = "<group>"; };
 		AD4193A7243E264100FE6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,8 +94,6 @@
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC52B35243E15C700A62BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC52B37243E15C700A62BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD334CB9FB8D9375F1BB2884 /* Pods_RubiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RubiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDDC87E1F24EAFEEC967713D /* Pods-RubiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiApp.release.xcconfig"; path = "Target Support Files/Pods-RubiApp/Pods-RubiApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC366F9430438BB1E2551A9 /* Pods_RubiApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +117,6 @@
 		94F8DA8E1A5CF08C40444969 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD334CB9FB8D9375F1BB2884 /* Pods_RubiApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,7 +206,6 @@
 				ADC52B2A243E15C700A62BA7 /* RubiApp */,
 				AD4193A4243E264100FE6C75 /* RubiAppTests */,
 				ADC52B29243E15C700A62BA7 /* Products */,
-				DC107FCEBE18DD4B83073691 /* Pods */,
 				94F8DA8E1A5CF08C40444969 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -246,15 +239,6 @@
 			path = RubiApp;
 			sourceTree = "<group>";
 		};
-		DC107FCEBE18DD4B83073691 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				41ADC2EEFC06CCA8F4109D15 /* Pods-RubiApp.debug.xcconfig */,
-				CDDC87E1F24EAFEEC967713D /* Pods-RubiApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,11 +264,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADC52B3A243E15C700A62BA7 /* Build configuration list for PBXNativeTarget "RubiApp" */;
 			buildPhases = (
-				FBFBDDB469C4D9883381A07A /* [CP] Check Pods Manifest.lock */,
 				ADC52B24243E15C700A62BA7 /* Sources */,
 				ADC52B25243E15C700A62BA7 /* Frameworks */,
 				ADC52B26243E15C700A62BA7 /* Resources */,
-				6C6EA79287BC1F5174EF08A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,48 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6C6EA79287BC1F5174EF08A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RubiApp/Pods-RubiApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RubiApp/Pods-RubiApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RubiApp/Pods-RubiApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBFBDDB469C4D9883381A07A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RubiApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD41939F243E264000FE6C75 /* Sources */ = {
@@ -622,7 +562,6 @@
 		};
 		ADC52B3B243E15C700A62BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41ADC2EEFC06CCA8F4109D15 /* Pods-RubiApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -641,7 +580,6 @@
 		};
 		ADC52B3C243E15C700A62BA7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDDC87E1F24EAFEEC967713D /* Pods-RubiApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
