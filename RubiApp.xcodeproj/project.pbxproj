@@ -39,26 +39,6 @@
 		AD4194142444965100FE6C75 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194132444965100FE6C75 /* ConnectionError.swift */; };
 		AD4194162444A24D00FE6C75 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */; };
 		AD4194182444A4E400FE6C75 /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194172444A4E400FE6C75 /* UIAlert.swift */; };
-		AD41942224456F5C00FE6C75 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941924456F5B00FE6C75 /* RxCocoa.framework */; };
-		AD41942324456F5C00FE6C75 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941924456F5B00FE6C75 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942424456F5C00FE6C75 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941A24456F5C00FE6C75 /* RxDataSources.framework */; };
-		AD41942524456F5C00FE6C75 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941A24456F5C00FE6C75 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942624456F5C00FE6C75 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941B24456F5C00FE6C75 /* Alamofire.framework */; };
-		AD41942724456F5C00FE6C75 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941B24456F5C00FE6C75 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942824456F5C00FE6C75 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941C24456F5C00FE6C75 /* RxRealm.framework */; };
-		AD41942924456F5C00FE6C75 /* RxRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941C24456F5C00FE6C75 /* RxRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942A24456F5C00FE6C75 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941D24456F5C00FE6C75 /* RxRelay.framework */; };
-		AD41942B24456F5C00FE6C75 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941D24456F5C00FE6C75 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942C24456F5C00FE6C75 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941E24456F5C00FE6C75 /* RealmSwift.framework */; };
-		AD41942D24456F5C00FE6C75 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941E24456F5C00FE6C75 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41942E24456F5C00FE6C75 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941F24456F5C00FE6C75 /* RxSwift.framework */; };
-		AD41942F24456F5C00FE6C75 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41941F24456F5C00FE6C75 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41943024456F5C00FE6C75 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41942024456F5C00FE6C75 /* Realm.framework */; };
-		AD41943124456F5C00FE6C75 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41942024456F5C00FE6C75 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD41943224456F5C00FE6C75 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD41942124456F5C00FE6C75 /* SVProgressHUD.framework */; };
-		AD41943324456F5C00FE6C75 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD41942124456F5C00FE6C75 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD419437244570A900FE6C75 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD419436244570A900FE6C75 /* Differentiator.framework */; };
-		AD419438244570A900FE6C75 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD419436244570A900FE6C75 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -81,16 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AD41942924456F5C00FE6C75 /* RxRealm.framework in Embed Frameworks */,
-				AD41942324456F5C00FE6C75 /* RxCocoa.framework in Embed Frameworks */,
-				AD41942F24456F5C00FE6C75 /* RxSwift.framework in Embed Frameworks */,
-				AD41942D24456F5C00FE6C75 /* RealmSwift.framework in Embed Frameworks */,
-				AD41943124456F5C00FE6C75 /* Realm.framework in Embed Frameworks */,
-				AD41942724456F5C00FE6C75 /* Alamofire.framework in Embed Frameworks */,
-				AD419438244570A900FE6C75 /* Differentiator.framework in Embed Frameworks */,
-				AD41943324456F5C00FE6C75 /* SVProgressHUD.framework in Embed Frameworks */,
-				AD41942524456F5C00FE6C75 /* RxDataSources.framework in Embed Frameworks */,
-				AD41942B24456F5C00FE6C75 /* RxRelay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,16 +102,6 @@
 		AD4194132444965100FE6C75 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		AD4194172444A4E400FE6C75 /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
-		AD41941924456F5B00FE6C75 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		AD41941A24456F5C00FE6C75 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
-		AD41941B24456F5C00FE6C75 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		AD41941C24456F5C00FE6C75 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
-		AD41941D24456F5C00FE6C75 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		AD41941E24456F5C00FE6C75 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		AD41941F24456F5C00FE6C75 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		AD41942024456F5C00FE6C75 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		AD41942124456F5C00FE6C75 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		AD419436244570A900FE6C75 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,16 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD41942824456F5C00FE6C75 /* RxRealm.framework in Frameworks */,
-				AD41942224456F5C00FE6C75 /* RxCocoa.framework in Frameworks */,
-				AD41942E24456F5C00FE6C75 /* RxSwift.framework in Frameworks */,
-				AD41942C24456F5C00FE6C75 /* RealmSwift.framework in Frameworks */,
-				AD41943024456F5C00FE6C75 /* Realm.framework in Frameworks */,
-				AD41942624456F5C00FE6C75 /* Alamofire.framework in Frameworks */,
-				AD419437244570A900FE6C75 /* Differentiator.framework in Frameworks */,
-				AD41943224456F5C00FE6C75 /* SVProgressHUD.framework in Frameworks */,
-				AD41942424456F5C00FE6C75 /* RxDataSources.framework in Frameworks */,
-				AD41942A24456F5C00FE6C75 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,16 +130,6 @@
 		94F8DA8E1A5CF08C40444969 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD419436244570A900FE6C75 /* Differentiator.framework */,
-				AD41941B24456F5C00FE6C75 /* Alamofire.framework */,
-				AD41942024456F5C00FE6C75 /* Realm.framework */,
-				AD41941E24456F5C00FE6C75 /* RealmSwift.framework */,
-				AD41941924456F5B00FE6C75 /* RxCocoa.framework */,
-				AD41941A24456F5C00FE6C75 /* RxDataSources.framework */,
-				AD41941C24456F5C00FE6C75 /* RxRealm.framework */,
-				AD41941D24456F5C00FE6C75 /* RxRelay.framework */,
-				AD41941F24456F5C00FE6C75 /* RxSwift.framework */,
-				AD41942124456F5C00FE6C75 /* SVProgressHUD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,7 +281,6 @@
 				ADC52B25243E15C700A62BA7 /* Frameworks */,
 				ADC52B26243E15C700A62BA7 /* Resources */,
 				AD41943424456F5C00FE6C75 /* Embed Frameworks */,
-				AD41943524456F9C00FE6C75 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -412,36 +351,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AD41943524456F9C00FE6C75 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD41939F243E264000FE6C75 /* Sources */ = {
