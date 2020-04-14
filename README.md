@@ -9,8 +9,8 @@
 # 環境
 - Xcode: 10.2
 - Swift: 5.2
-- Cocoapod: 1.9.1 (最新のmaster・devブランチにはcoocoapodsは適用されていません)
-- Carthage: 0.34.0
+- Cocoapod: 1.9.1 
+- Carthage: 0.34.0 (最新のmaster・devブランチにはCarthageは適用されていません)
 
 # セットアップ
 ①[docomo Developer support](https://dev.smt.docomo.ne.jp/?p=index)でひらがな化APIを使用することを申請しAPIKeyを発行して下さい。  
