@@ -1,0 +1,37 @@
+# SwiftLintの適用から外すディレクトリ
+excluded:
+- Pods/
+- Carthage/
+
+disabled_rules:
+  - trailing_comma
+  - trailing_newline
+  - trailing_whitespace
+  - vertical_whitespace
+  # Rules below are just exceptions under scratch phase and should be re-enabled in the future.
+  - todo
+  - fixme
+
+line_length:
+  ignores_function_declarations: true
+  ignores_comments: true
+  warning: 175
+
+identifier_name:
+  max_length: 50
+
+type_name:
+  max_length: 50
+
+nesting:
+  type_level:
+    warning: 2
+  statement_level:
+    warning: 5
+
+function_parameter_count:
+  warning: 7
+  error: 10
+
+large_tuple:
+  warning: 4
