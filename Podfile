@@ -6,12 +6,9 @@ target 'RubiApp' do
   use_frameworks!
 
   # Pods for RubiApp
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'Alamofire'
-  pod 'RxDataSources'
+  pod 'R.swift'
+  pod 'SegueManager'
   pod 'SVProgressHUD'
-  pod "RxRealm"  
 
   target 'RubiAppTests' do
     inherit! :search_paths
