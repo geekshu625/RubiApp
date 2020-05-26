@@ -1,59 +1,35 @@
 PODS:
-  - Alamofire (5.1.0)
-  - Differentiator (4.0.1)
-  - Realm (4.4.0):
-    - Realm/Headers (= 4.4.0)
-  - Realm/Headers (4.4.0)
-  - RealmSwift (4.4.0):
-    - Realm (= 4.4.0)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxDataSources (4.0.1):
-    - Differentiator (~> 4.0)
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
-  - RxRealm (2.0.0):
-    - RealmSwift (~> 4.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
+  - SegueManager (4.2.0):
+    - SegueManager/iOS (= 4.2.0)
+    - SegueManager/OSX (= 4.2.0)
+    - SegueManager/R.swift (= 4.2.0)
+  - SegueManager/iOS (4.2.0)
+  - SegueManager/R.swift (4.2.0):
+    - R.swift.Library
+    - SegueManager/iOS
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - Alamofire
-  - RxCocoa
-  - RxDataSources
-  - RxRealm
-  - RxSwift
+  - R.swift
+  - SegueManager
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - Differentiator
-    - Realm
-    - RealmSwift
-    - RxCocoa
-    - RxDataSources
-    - RxRealm
-    - RxRelay
-    - RxSwift
+    - R.swift
+    - R.swift.Library
+    - SegueManager
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
-  RealmSwift: 33656a42bd300959a081fc13347376bc478071af
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+  SegueManager: 4f0c9e8237fe4b925129f17964caf81d1d6341bf
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: e9bfc0d15515588a84398f2b63e5b9f97384a87a
+PODFILE CHECKSUM: c21a32838ad7095b2ce46c63ef318e4a26971bae
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.2
