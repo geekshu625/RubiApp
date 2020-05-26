@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct APIErrorRooter: Codable{
+struct APIErrorRooter: Codable {
     let error: APIError
 }
 
-struct APIError: Codable{
+struct APIError: Codable {
     let code: Int
 }
 
 struct HiraganaAPIError: Error {
-    
+
     var message: String
     init(errorCode: Int) {
-        
+
         switch errorCode {
         case 413:
             message = "利用可能な上限に達しました。しばらく経ってからご利用ください"

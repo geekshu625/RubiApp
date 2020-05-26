@@ -7,25 +7,25 @@
 //
 
 /*Cell上のボタンタップを検知する方法
-disposeBagオブジェクトはセルの再利用のたびに新しく生成する必要がある。
+ disposeBagオブジェクトはセルの再利用のたびに新しく生成する必要がある。
  参考：https://qiita.com/katafuchix/items/5909fa2d38b5f5455df1
-*/
+ */
 
 import UIKit
 import RxSwift
 
 class ResultTableViewCell: UITableViewCell {
-    
+
     @IBOutlet public weak var hiraganaLabel: SubLabelStyle!
     @IBOutlet public weak var kanziLabel: MainLabelStyle!
     @IBOutlet public weak var saveButton: UIButton!
-    
+
     var disposeBag = DisposeBag()
     var isTap = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         self.disposeBag = DisposeBag()
     }
 

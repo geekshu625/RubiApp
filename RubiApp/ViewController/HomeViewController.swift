@@ -13,8 +13,8 @@ import RxDataSources
 import SafariServices
 import SVProgressHUD
 
-final class HomeViewController: UIViewController, UITableViewDelegate{
-    
+final class HomeViewController: UIViewController, UITableViewDelegate {
+
     @IBOutlet private weak var textField: MainTextFieldStyle!
     @IBOutlet private weak var pasteButton: UIButton!
     @IBOutlet private weak var copyButton: UIButton!
@@ -22,11 +22,12 @@ final class HomeViewController: UIViewController, UITableViewDelegate{
     @IBOutlet private weak var changedTextLabel: SubLabelStyle!
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var resultTableView: UITableView!
-        
-    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
+
+    //swiftlint:disable:next line_length
+    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
         guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.CELL_ID, for: indexPath) as? ResultTableViewCell
-        else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.cellId, for: indexPath) as? ResultTableViewCell
+            else { return UITableViewCell() }
         cell.kanziLabel.text = item.kanzi
         cell.hiraganaLabel.text = item.hiragana.converted
         cell.saveButton.rx.tap.asDriver()
@@ -44,46 +45,46 @@ final class HomeViewController: UIViewController, UITableViewDelegate{
             .disposed(by: cell.disposeBag)
         return cell
     })
-    
+
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()
     private let backgroundTapGesture = UITapGestureRecognizer()
-    private let CELL_ID = "ResultTableViewCell"
+    private let cellId = "ResultTableViewCell"
     private let pasteboard = UIPasteboard.general
     private let alertSentence = "😭文字を入力してください"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.backgroundColor = .backgroud
         self.view.addGestureRecognizer(backgroundTapGesture)
         tabBarController?.tabBar.isTranslucent = false
         indicator.hidesWhenStopped = true
-        
-        resultTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+
+        resultTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         resultTableView.tableFooterView = UIView()
         resultTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
-        
+
         viewModel = HomeViewModel()
         viewModel.dataObservable.bind(to: resultTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
-        
+
         viewModel.isLoading
-        .drive(indicator.rx.isAnimating)
-        .disposed(by: disposeBag)
-        
+            .drive(indicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+
         viewModel.resultData
             .drive(onNext: { [weak self](hiragana) in
                 self!.changedTextLabel.text = hiragana
             })
             .disposed(by: disposeBag)
-        
+
         pasteButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 self?.dismissKeyBoard()
-                self?.textField.text = self!.pasteboard.value(forPasteboardType: "public.text") as! String
+                self?.textField.text = self!.pasteboard.value(forPasteboardType: "public.text") as? String
             })
             .disposed(by: disposeBag)
-        
+
         copyButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 self?.dismissKeyBoard()
@@ -92,13 +93,13 @@ final class HomeViewController: UIViewController, UITableViewDelegate{
                 SVProgressHUD.dismiss(withDelay: 1.0)
             })
             .disposed(by: disposeBag)
-        
+
         searchButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 self!.dismissKeyBoard()
                 let text = self!.textField.text
                 if text?.count == 0 {
-                     self?.changedTextLabel.text = self!.alertSentence
+                    self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
                 let encodeUrl = self!.toEncodeUrl(text: text!)
@@ -115,41 +116,41 @@ final class HomeViewController: UIViewController, UITableViewDelegate{
                     self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
-                self?.viewModel.post(request_id: "record001", sentence: self!.textField.text!, output_type: "hiragana")
+                self?.viewModel.post(requestId: "record001", sentence: self!.textField.text!, outputType: "hiragana")
             })
             .disposed(by: disposeBag)
-        
+
         textField.rx.controlEvent(.editingDidBegin).asDriver()
             .drive(onNext: { [weak self] in
                 self?.textField.text = ""
             })
             .disposed(by: disposeBag)
-        
+
         backgroundTapGesture.rx.event.asDriver()
-            .drive(onNext: { [weak self](UITapGestureRecognizer) in
+            .drive(onNext: { [weak self](_) in
                 self?.dismissKeyBoard()
             })
-        .disposed(by: disposeBag)
-        
+            .disposed(by: disposeBag)
+
         //通信時にエラーが発生した場合にアラートを表示
         viewModel.alertTrigger.asObservable()
             .bind { (message) in
                 self.showAlert(message: message)
-            }
-            .disposed(by: disposeBag)
-    
+        }
+        .disposed(by: disposeBag)
+
     }
-    
-    private func toEncodeUrl(text: String) -> String{
+
+    private func toEncodeUrl(text: String) -> String {
         let urlString: String = "https://dictionary.goo.ne.jp/srch/all/\(text)/m0u/"
         let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         return encodeUrlString
     }
-    
+
     private func dismissKeyBoard() {
         self.view.endEditing(false)
     }
-    
+
     private func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let defAction = UIAlertAction(title: "OK", style: .default, handler: nil)

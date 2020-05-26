@@ -9,7 +9,13 @@
 import Foundation
 
 struct BodyData: Codable {
-    var request_id: String
+    var requestId: String
     var sentence: String
-    var output_type: String
+    var outputType: String
+
+    enum CodingKeys: String, CodingKey {
+        case requestId = "request_id"
+        case sentence
+        case outputType = "output_type"
+    }
 }

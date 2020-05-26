@@ -11,14 +11,14 @@ import UIKit
 protocol AlertProtocol where Self: UIViewController {
     func showAlert(title: String?, message: String?, callback: @escaping () -> Void)
 }
- 
+
 extension AlertProtocol {
     func showAlert(title: String?, message: String?, callback: @escaping () -> Void) {
         let alertController = UIAlertController(title: title,
                                                 message: message,
                                                 preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK",
-                                     style: .default) { action in
+                                     style: .default) { _ in
                                         callback()
         }
         let cancelAction = UIAlertAction(title: "キャンセル",

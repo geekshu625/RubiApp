@@ -20,13 +20,13 @@ extension UIFont {
     static func subTitle() -> UIFont {
         createFont(isiPhone: 15, isiPad: 25, weight: .semibold)
     }
-    
+
     static func textFiledStyle() -> UIFont {
         createFont(isiPhone: 20, isiPad: 25, weight: .semibold)
     }
-    
-    
-    static func createFont(isiPhone: CGFloat, isiPad: CGFloat, weight: UIFont.Weight) -> UIFont{
+
+
+    static func createFont(isiPhone: CGFloat, isiPad: CGFloat, weight: UIFont.Weight) -> UIFont {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
             return self.apply(size: isiPhone, weight: weight)
@@ -37,5 +37,5 @@ extension UIFont {
         }
         return self.apply(size: isiPhone, weight: weight)
     }
-    
+
 }
