@@ -7,12 +7,26 @@
 
 
 # 環境
-- Xcode: 10.2
+- Xcode: 11.5
 - Swift: 5.2
 - Cocoapod: 1.9.1 
-- Carthage: 0.34.0 (最新のmaster・devブランチにはCarthageは適用されていません)
+- Carthage: 0.34.0 
 
 # セットアップ
+## cloneしてからすること
+
+プロジェクトをクローンしてからターミナルやiTtermで以下のコマンドを実行して下さい
+
+```
+$ make bootstrap
+```
+and
+
+```
+$ make project
+```
+## ビルド前にすること
+
 ①[docomo Developer support](https://dev.smt.docomo.ne.jp/?p=index)でひらがな化APIを使用することを申請しAPIKeyを発行して下さい。  
 ②RubiApp/API/APIKey.swiftにあるの環境変数に取得したAPIKeyを入いれて下さい。
 
