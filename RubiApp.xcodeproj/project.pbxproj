@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,17 @@
 		AD4194142444965100FE6C75 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194132444965100FE6C75 /* ConnectionError.swift */; };
 		AD4194162444A24D00FE6C75 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */; };
 		AD4194182444A4E400FE6C75 /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194172444A4E400FE6C75 /* UIAlert.swift */; };
+		ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */; };
+		ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */; };
+		ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC9247D0B0600043AE5 /* DIKit.framework */; };
+		ADA1EEDA247D0B0600043AE5 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EECA247D0B0600043AE5 /* Differentiator.framework */; };
+		ADA1EEDC247D0B0600043AE5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EECB247D0B0600043AE5 /* RxCocoa.framework */; };
+		ADA1EEE0247D0B0600043AE5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EECD247D0B0600043AE5 /* Realm.framework */; };
+		ADA1EEE2247D0B0600043AE5 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EECE247D0B0600043AE5 /* APIKit.framework */; };
+		ADA1EEE4247D0B0600043AE5 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EECF247D0B0600043AE5 /* OHHTTPStubs.framework */; };
+		ADA1EEE8247D0B0600043AE5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED1247D0B0600043AE5 /* Alamofire.framework */; };
+		ADA1EEEA247D0B0600043AE5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED2247D0B0600043AE5 /* RealmSwift.framework */; };
+		ADA1EEEC247D0B0600043AE5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED3247D0B0600043AE5 /* RxRelay.framework */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -55,19 +66,6 @@
 			remoteInfo = RubiApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AD41943424456F5C00FE6C75 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		702C3912A7FF64CE0A0E276F /* Pods-RubiAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiAppTests.release.xcconfig"; path = "Target Support Files/Pods-RubiAppTests/Pods-RubiAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +107,20 @@
 		AD4194132444965100FE6C75 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		AD4194172444A4E400FE6C75 /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
+		ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		ADA1EEC9247D0B0600043AE5 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
+		ADA1EECA247D0B0600043AE5 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		ADA1EECB247D0B0600043AE5 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		ADA1EECC247D0B0600043AE5 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		ADA1EECD247D0B0600043AE5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		ADA1EECE247D0B0600043AE5 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		ADA1EECF247D0B0600043AE5 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		ADA1EED0247D0B0600043AE5 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		ADA1EED1247D0B0600043AE5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		ADA1EED2247D0B0600043AE5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		ADA1EED3247D0B0600043AE5 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		ADA1EEF1247D10F300043AE5 /* CarthageFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = CarthageFrameworks.xcfilelist; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +142,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA1EEEA247D0B0600043AE5 /* RealmSwift.framework in Frameworks */,
+				ADA1EEDC247D0B0600043AE5 /* RxCocoa.framework in Frameworks */,
+				ADA1EEEC247D0B0600043AE5 /* RxRelay.framework in Frameworks */,
+				ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */,
+				ADA1EEE2247D0B0600043AE5 /* APIKit.framework in Frameworks */,
+				ADA1EEDA247D0B0600043AE5 /* Differentiator.framework in Frameworks */,
+				ADA1EEE0247D0B0600043AE5 /* Realm.framework in Frameworks */,
+				ADA1EEE8247D0B0600043AE5 /* Alamofire.framework in Frameworks */,
+				ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */,
+				ADA1EEE4247D0B0600043AE5 /* OHHTTPStubs.framework in Frameworks */,
+				ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */,
 				423C681BD27EA5D76C7EDD1F /* Pods_RubiApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +163,19 @@
 		94F8DA8E1A5CF08C40444969 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADA1EED1247D0B0600043AE5 /* Alamofire.framework */,
+				ADA1EECE247D0B0600043AE5 /* APIKit.framework */,
+				ADA1EECA247D0B0600043AE5 /* Differentiator.framework */,
+				ADA1EEC9247D0B0600043AE5 /* DIKit.framework */,
+				ADA1EECF247D0B0600043AE5 /* OHHTTPStubs.framework */,
+				ADA1EECD247D0B0600043AE5 /* Realm.framework */,
+				ADA1EED2247D0B0600043AE5 /* RealmSwift.framework */,
+				ADA1EECC247D0B0600043AE5 /* RxBlocking.framework */,
+				ADA1EECB247D0B0600043AE5 /* RxCocoa.framework */,
+				ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */,
+				ADA1EED3247D0B0600043AE5 /* RxRelay.framework */,
+				ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */,
+				ADA1EED0247D0B0600043AE5 /* RxTest.framework */,
 				A7CCBBD92483C1661779975C /* Pods_RubiApp.framework */,
 				A08A040D4CDA85921BAC25A7 /* Pods_RubiAppTests.framework */,
 			);
@@ -261,6 +297,7 @@
 				AD4193CE243EDBA200FE6C75 /* Saved.storyboard */,
 				ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */,
 				ADC52B37243E15C700A62BA7 /* Info.plist */,
+				ADA1EEF1247D10F300043AE5 /* CarthageFrameworks.xcfilelist */,
 			);
 			path = RubiApp;
 			sourceTree = "<group>";
@@ -273,7 +310,6 @@
 				794E3B830E6F43BAF9CF5597 /* Pods-RubiAppTests.debug.xcconfig */,
 				702C3912A7FF64CE0A0E276F /* Pods-RubiAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -307,8 +343,8 @@
 				ADC52B24243E15C700A62BA7 /* Sources */,
 				ADC52B25243E15C700A62BA7 /* Frameworks */,
 				ADC52B26243E15C700A62BA7 /* Resources */,
-				AD41943424456F5C00FE6C75 /* Embed Frameworks */,
 				5A84B0DED346701A84FBCA44 /* [CP] Embed Pods Frameworks */,
+				ADA1EEEE247D0B2200043AE5 /* Copy Frameworks via Carthage */,
 			);
 			buildRules = (
 			);
@@ -441,6 +477,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		ADA1EEEE247D0B2200043AE5 /* Copy Frameworks via Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/RubiApp/CarthageFrameworks.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "Copy Frameworks via Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

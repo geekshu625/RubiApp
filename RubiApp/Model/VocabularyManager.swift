@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 import RxSwift
-import RxRealm
 
 final class VocabularyManager {
     
