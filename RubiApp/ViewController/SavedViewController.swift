@@ -11,50 +11,51 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol{
-    
+final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol {
+
     @IBOutlet private weak var savedTableView: UITableView!
     @IBOutlet private weak var deleteButton: UIBarButtonItem!
-    
-    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] dataSource, tableView, indexPath, item in
+
+    //swiftlint:disable:next line_length
+    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
         guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.CELL_ID, for: indexPath) as? ResultTableViewCell
-        else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.cellId, for: indexPath) as? ResultTableViewCell
+            else { return UITableViewCell() }
         cell.kanziLabel.text = item.vocabulary.kanzi
         cell.hiraganaLabel.text = item.vocabulary.hiragana
         cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
         cell.saveButton.isEnabled = false
         return cell
     })
-    
+
     private var viewModel: SavedViewModel!
     private let disposeBag = DisposeBag()
-    private let CELL_ID = "ResultTableViewCell"
-    
+    private let cellId = "ResultTableViewCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .backgroud
         tabBarController?.tabBar.isTranslucent = false
-        
-        savedTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: CELL_ID)
+
+        savedTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         savedTableView.tableFooterView = UIView()
         savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
         savedTableView.allowsSelection = false
-        
+
         viewModel = SavedViewModel()
         viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
-        
+
         deleteButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 self!.showAlert(title: "確認", message: "保存しているデータを全て削除してもいいですか？") {
                     self!.viewModel.deleteAllVocabulary()
                 }
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchAllVocabulary()
     }

@@ -11,7 +11,7 @@ import Alamofire
 
 protocol APIRequest {
     associatedtype ResponseObject: Codable
-    
+
     var path: String { get }
     var method: HTTPMethod { get }
     var body: BodyData { get }

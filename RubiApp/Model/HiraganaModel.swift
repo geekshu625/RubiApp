@@ -11,9 +11,9 @@ import RxSwift
 
 struct HiraganaModel {
     static let apiClient = HiraganaAPIClient()
-    
-    static func post(request_id: String, sentence: String, output_type: String) -> Observable<Hiragana>  {
-        let request = HiraganaAPI.PostKanzi.init(request_id: request_id, sentence: sentence, output_type: output_type)
+
+    static func post(requestId: String, sentence: String, outputType: String) -> Observable<Hiragana> {
+        let request = HiraganaAPI.PostKanzi.init(requestId: requestId, sentence: sentence, outputType: outputType)
         return self.apiClient.call(request: request)
     }
 }

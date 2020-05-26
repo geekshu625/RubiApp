@@ -11,9 +11,9 @@ import RxDataSources
 import RxSwift
 
 protocol ListViewModelProtocol {
-    associatedtype Data:IdentifiableType, Equatable
+    associatedtype Data: IdentifiableType, Equatable
     typealias SectionModel = AnimatableSectionModel<Int, Data>
-    
-    var dataObservable: Observable<[SectionModel]>{get}
+
+    var dataObservable: Observable<[SectionModel]> {get}
 }
 

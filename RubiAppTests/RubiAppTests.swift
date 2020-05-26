@@ -9,20 +9,20 @@
 import XCTest
 @testable import RubiApp
 /*
-TODO: 今後するべきテスト
-- ルビ変換ボタン押下時にサーバへリクエストを投げているか
-- 正しくサーバにパラメータを渡しているか
-- サーバとの通信が失敗した場合
-- サーバから返ってきたJSONデータが想定と異なる場合
-- サーバから返ってきたデータを正しく表示できているか
-*/
+ TODO: 今後するべきテスト
+ - ルビ変換ボタン押下時にサーバへリクエストを投げているか
+ - 正しくサーバにパラメータを渡しているか
+ - サーバとの通信が失敗した場合
+ - サーバから返ってきたJSONデータが想定と異なる場合
+ - サーバから返ってきたデータを正しく表示できているか
+ */
 
 class RubiAppTests: XCTestCase {
-    
+
     var vc: ViewController!
 
     override func setUp() {
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.vc = storyboard.instantiateInitialViewController() as? ViewController
     }
