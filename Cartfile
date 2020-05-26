@@ -1,0 +1,7 @@
+github "ReactiveX/RxSwift" ~> 5.0
+github "RxSwiftCommunity/RxDataSources" ~> 4.0
+github "Alamofire/Alamofire" ~> 5.1
+github "ishkawa/DIKIt"
+github "ishkawa/APIKit"
+github "AliSoftware/OHHTTPStubs"
+github "realm/realm-cocoa"
