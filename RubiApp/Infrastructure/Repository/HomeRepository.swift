@@ -12,7 +12,7 @@ final class HomeRepository {
 
     struct PostKanzi: APIRequest {
 
-        typealias ResponseObject = Hiragana
+        typealias ResponseObject = ConvertedResponse
 
         let requestId: String
         let sentence: String

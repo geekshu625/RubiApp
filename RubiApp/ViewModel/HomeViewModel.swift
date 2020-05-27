@@ -14,7 +14,7 @@ import RealmSwift
 
 struct HomeTableViewData {
     let id = UUID().uuidString
-    let hiragana: Hiragana
+    let hiragana: ConvertedResponse
     let kanzi: String
 }
 

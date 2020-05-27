@@ -34,7 +34,7 @@ class HiraganaAPIClient {
                             observer.onError(apiError)
                         }
 
-                        let hiragana = try? JSONDecoder().decode(Hiragana.self, from: data)
+                        let hiragana = try? JSONDecoder().decode(ConvertedResponse.self, from: data)
                         DispatchQueue.main.async {
                             //swiftlint:disable:next force_cast
                             observer.onNext(hiragana as! Request.ResponseObject)

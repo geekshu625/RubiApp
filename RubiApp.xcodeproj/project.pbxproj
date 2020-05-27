@@ -10,7 +10,7 @@
 		423C681BD27EA5D76C7EDD1F /* Pods_RubiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CCBBD92483C1661779975C /* Pods_RubiApp.framework */; };
 		8DA386131D1B34C6DFF0D861 /* Pods_RubiAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A040D4CDA85921BAC25A7 /* Pods_RubiAppTests.framework */; };
 		AD4193A6243E264100FE6C75 /* RubiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193A5243E264100FE6C75 /* RubiAppTests.swift */; };
-		AD4193AE243E29BB00FE6C75 /* Hiragana.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AD243E29BB00FE6C75 /* Hiragana.swift */; };
+		AD4193AE243E29BB00FE6C75 /* ConvertedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AD243E29BB00FE6C75 /* ConvertedResponse.swift */; };
 		AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */; };
 		AD4193B2243E2F2100FE6C75 /* FakeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B1243E2F2100FE6C75 /* FakeAPIClient.swift */; };
 		AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B4243E2FD400FE6C75 /* APIClient.swift */; };
@@ -76,7 +76,7 @@
 		AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4193A5243E264100FE6C75 /* RubiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiAppTests.swift; sourceTree = "<group>"; };
 		AD4193A7243E264100FE6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD4193AD243E29BB00FE6C75 /* Hiragana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiragana.swift; sourceTree = "<group>"; };
+		AD4193AD243E29BB00FE6C75 /* ConvertedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedResponse.swift; sourceTree = "<group>"; };
 		AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		AD4193B1243E2F2100FE6C75 /* FakeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPIClient.swift; sourceTree = "<group>"; };
 		AD4193B4243E2FD400FE6C75 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		ADA1EF04247E059700043AE5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				AD4193AD243E29BB00FE6C75 /* Hiragana.swift */,
+				AD4193AD243E29BB00FE6C75 /* ConvertedResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -690,7 +690,7 @@
 				AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */,
 				AD41940A2441CBFF00FE6C75 /* Vocabulary.swift in Sources */,
 				AD4194182444A4E400FE6C75 /* UIAlert.swift in Sources */,
-				AD4193AE243E29BB00FE6C75 /* Hiragana.swift in Sources */,
+				AD4193AE243E29BB00FE6C75 /* ConvertedResponse.swift in Sources */,
 				AD4193BF243E3E8F00FE6C75 /* UIFont.swift in Sources */,
 				AD4193C5243EC3C400FE6C75 /* UILabel.swift in Sources */,
 				AD4193E12440566400FE6C75 /* UITextField.swift in Sources */,

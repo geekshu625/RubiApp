@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HiraganaAPIClientProtocol {
-    func post(completion: @escaping (([Hiragana]?) -> Void))
+    func post(completion: @escaping (([ConvertedResponse]?) -> Void))
 }
