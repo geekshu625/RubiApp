@@ -1,5 +1,5 @@
 //
-//  HiraganaAPI.swift
+//  HomeRepository.swift
 //  RubiApp
 //
 //  Created by 松木周 on 2020/04/09.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-final class HiraganaAPI {
+final class HomeRepository {
 
     struct PostKanzi: APIRequest {
 
-        typealias ResponseObject = Hiragana
+        typealias ResponseObject = ConvertedResponse
 
         let requestId: String
         let sentence: String

@@ -1,5 +1,5 @@
 //
-//  HiraganaCodable.swift
+//  ConvertedResponse.swift
 //  RubiApp
 //
 //  Created by 松木周 on 2020/04/09.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Hiragana: Codable {
+struct ConvertedResponse: Codable {
     let converted: String
 }
