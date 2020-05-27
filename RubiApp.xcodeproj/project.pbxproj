@@ -55,6 +55,7 @@
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
+		ADFD2901247E48FB009BF4F0 /* HomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFD2900247E48FB009BF4F0 /* HomeUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC52B35243E15C700A62BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC52B37243E15C700A62BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADFD2900247E48FB009BF4F0 /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
 		ED6563B2EF409D4957C8138A /* Pods-RubiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiApp.debug.xcconfig"; path = "Target Support Files/Pods-RubiApp/Pods-RubiApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
+				ADFD2900247E48FB009BF4F0 /* HomeUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD419412244493D800FE6C75 /* APIError.swift in Sources */,
+				ADFD2901247E48FB009BF4F0 /* HomeUsecase.swift in Sources */,
 				AD4194162444A24D00FE6C75 /* UIBarButtonItem.swift in Sources */,
 				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
