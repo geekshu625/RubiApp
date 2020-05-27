@@ -24,12 +24,9 @@ extension HomeUsecase: HomeConvertUsecaseProtocl {
         return Observable.create { [weak self] observer -> Disposable in
             guard let `self` = self else { return Disposables.create {} }
 
-            var urlRequest = URLRequest(url: URL(string: request.path)!)
-            urlRequest.httpMethod = request.method.rawValue
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let body = try? JSONEncoder().encode(request.body)
 
-            let task = AF.upload(body!, with: urlRequest)
+            let task = AF.upload(body!, with: request.makeRequest())
                 .response { (response) in
                     switch response.result {
                     case .success:
@@ -42,10 +39,10 @@ extension HomeUsecase: HomeConvertUsecaseProtocl {
                         }
 
                         let hiragana = try? JSONDecoder().decode(ConvertedResponse.self, from: data)
-                        DispatchQueue.main.async {
-                            //swiftlint:disable:next force_cast
-                            observer.onNext(hiragana as! Request.ResponseObject)
-                        }
+
+                        //swiftlint:disable:next force_cast
+                        observer.onNext(hiragana as! Request.ResponseObject)
+
 
                     case .failure(let error):
                         //ネットワークのエラー処理

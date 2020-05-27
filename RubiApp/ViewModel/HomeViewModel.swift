@@ -70,9 +70,9 @@ class HomeViewModel: ListViewModelProtocol {
         dataRelay.accept([sectionModel])
     }
 
-    func post(requestId: String, sentence: String, outputType: String) {
+    func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
-        HiraganaModel.post(requestId: requestId, sentence: sentence, outputType: outputType)
+        HiraganaModel.post(sentence: sentence)
             .subscribe(onNext: { (data) in
                 self.isLoadingBehavior.accept(false)
                 self.resultDataBehavior.accept(data.converted)

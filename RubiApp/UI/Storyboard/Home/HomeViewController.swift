@@ -116,7 +116,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate {
                     self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
-                self?.viewModel.post(requestId: "record001", sentence: self!.textField.text!, outputType: "hiragana")
+                self?.viewModel.post(sentence: self!.textField.text!)
             })
             .disposed(by: disposeBag)
 
