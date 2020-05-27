@@ -41,12 +41,6 @@ class HomeViewModel: ListViewModelProtocol {
     }()
     private var isLoadingBehavior = BehaviorRelay<Bool>(value: false)
 
-    //保存しているかどうかの状態を保持している
-    //    lazy var isSaved: SharedSequence<DriverSharingStrategy, Bool> = {
-    //        return self.isSavedBehavior.asDriver()
-    //    }()
-    //    private var isSavedBehavior = BehaviorRelay<Bool>(value: SaveVocabulary(isSaved: false))
-
     //変換したひらがなを保持している
     lazy var resultData: SharedSequence<DriverSharingStrategy, String> = {
         return self.resultDataBehavior.asDriver()
@@ -84,16 +78,6 @@ class HomeViewModel: ListViewModelProtocol {
             })
             .disposed(by: disposeBag)
     }
-
-    //保存されているかどうかを取得
-    //    func fetch() {
-    //        VocabularyManager.getIsSaved(disposeBag: disposeBag)
-    //            .subscribe(onNext: { (saveVocablary) in
-    //                self.isSavedBehavior.accept(saveVocablary)
-    //            })
-    //        .disposed(by: disposeBag)
-    //    }
-
     //Realmに保存
     func createVocabulary(vocabulary: Vocabulary) {
         VocabularyManager.add(vocabulary: vocabulary)
