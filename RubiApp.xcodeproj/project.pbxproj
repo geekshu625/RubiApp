@@ -187,10 +187,7 @@
 			children = (
 				AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */,
 				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
-				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
 				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
-				AD419411244493D800FE6C75 /* APIError.swift */,
-				AD4194132444965100FE6C75 /* ConnectionError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -211,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
-				AD4194092441CBFF00FE6C75 /* Vocabulary.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +387,7 @@
 				AD419399243E22D300FE6C75 /* Extension */,
 				ADA1EEF4247DFB8400043AE5 /* UI */,
 				ADA1EF03247E057E00043AE5 /* Infrastructure */,
+				ADFD28F9247E14F5009BF4F0 /* Data */,
 				ADC52B32243E15C700A62BA7 /* Assets.xcassets */,
 				ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */,
 				ADC52B37243E15C700A62BA7 /* Info.plist */,
@@ -405,6 +402,17 @@
 				AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		ADFD28F9247E14F5009BF4F0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD419411244493D800FE6C75 /* APIError.swift */,
+				AD4194132444965100FE6C75 /* ConnectionError.swift */,
+				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
+				AD4194092441CBFF00FE6C75 /* Vocabulary.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		B3BE704EC0D112735B5C853A /* Pods */ = {
