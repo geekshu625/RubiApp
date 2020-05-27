@@ -185,11 +185,7 @@
 		AD419399243E22D300FE6C75 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AD4193BC243E3E6000FE6C75 /* UIColor.swift */,
-				AD4193BE243E3E8F00FE6C75 /* UIFont.swift */,
-				AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */,
 				AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */,
-				AD4194172444A4E400FE6C75 /* UIAlert.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,6 +366,7 @@
 				ADFD28FA247E1617009BF4F0 /* Domain */,
 				ADA1EF03247E057E00043AE5 /* Infrastructure */,
 				ADFD28F9247E14F5009BF4F0 /* Data */,
+				ADFD28FD247E1D19009BF4F0 /* IndependentTools */,
 				ADC52B32243E15C700A62BA7 /* Assets.xcassets */,
 				ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */,
 				ADC52B37243E15C700A62BA7 /* Info.plist */,
@@ -421,6 +418,33 @@
 				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		ADFD28FD247E1D19009BF4F0 /* IndependentTools */ = {
+			isa = PBXGroup;
+			children = (
+				ADFD28FE247E1D3E009BF4F0 /* Utility */,
+				ADFD28FF247E1DA0009BF4F0 /* Extension */,
+			);
+			path = IndependentTools;
+			sourceTree = "<group>";
+		};
+		ADFD28FE247E1D3E009BF4F0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */,
+				AD4194172444A4E400FE6C75 /* UIAlert.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ADFD28FF247E1DA0009BF4F0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193BC243E3E6000FE6C75 /* UIColor.swift */,
+				AD4193BE243E3E8F00FE6C75 /* UIFont.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B3BE704EC0D112735B5C853A /* Pods */ = {
