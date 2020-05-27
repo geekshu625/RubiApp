@@ -182,45 +182,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AD419398243E22CA00FE6C75 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */,
-				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
-				AD4193D2243EFC2000FE6C75 /* APIRequest.swift */,
-				AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */,
-				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
-				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
-				AD419411244493D800FE6C75 /* APIError.swift */,
-				AD4194132444965100FE6C75 /* ConnectionError.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		AD419399243E22D300FE6C75 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AD4193BC243E3E6000FE6C75 /* UIColor.swift */,
-				AD4193BE243E3E8F00FE6C75 /* UIFont.swift */,
-				AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */,
-				AD4193C4243EC3C400FE6C75 /* UILabel.swift */,
-				AD4193C6243EC44900FE6C75 /* UITextView.swift */,
-				AD4193E02440566400FE6C75 /* UITextField.swift */,
 				AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */,
-				AD4194172444A4E400FE6C75 /* UIAlert.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		AD41939A243E22E200FE6C75 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
-				AD4193AD243E29BB00FE6C75 /* Hiragana.swift */,
-				AD4194092441CBFF00FE6C75 /* Vocabulary.swift */,
-				AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AD41939B243E22E600FE6C75 /* ViewModel */ = {
@@ -233,24 +200,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AD41939C243E22EC00FE6C75 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AD4193CA243ED85200FE6C75 /* ResultTableViewCell.swift */,
-				AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AD41939D243E22F100FE6C75 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */,
-				AD4193D0243EDCB600FE6C75 /* SavedViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		AD4193A4243E264100FE6C75 /* RubiAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +208,131 @@
 				AD4193A7243E264100FE6C75 /* Info.plist */,
 			);
 			path = RubiAppTests;
+			sourceTree = "<group>";
+		};
+		ADA1EEF4247DFB8400043AE5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ADA1EEF9247DFC8B00043AE5 /* Storyboard */,
+				ADA1EEFB247DFCA000043AE5 /* ViewController */,
+				ADA1EEFC247DFCB500043AE5 /* CommonView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ADA1EEF9247DFC8B00043AE5 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */,
+				AD4193B8243E3D2100FE6C75 /* Home.storyboard */,
+				AD4193CE243EDBA200FE6C75 /* Saved.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ADA1EEFB247DFCA000043AE5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ADA1EEFD247DFD6900043AE5 /* Home */,
+				ADA1EEFE247DFD7600043AE5 /* Saved */,
+			);
+			name = ViewController;
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ADA1EEFC247DFCB500043AE5 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				ADA1EEFF247DFE1500043AE5 /* View */,
+				ADA1EF00247DFE5400043AE5 /* Label */,
+				ADA1EF01247DFE6900043AE5 /* TextView */,
+				ADA1EF02247DFE7C00043AE5 /* TextField */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		ADA1EEFD247DFD6900043AE5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ADA1EEFE247DFD7600043AE5 /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193D0243EDCB600FE6C75 /* SavedViewController.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		ADA1EEFF247DFE1500043AE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193CA243ED85200FE6C75 /* ResultTableViewCell.swift */,
+				AD4193CB243ED85200FE6C75 /* ResultTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADA1EF00247DFE5400043AE5 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193C4243EC3C400FE6C75 /* UILabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		ADA1EF01247DFE6900043AE5 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193C6243EC44900FE6C75 /* UITextView.swift */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		ADA1EF02247DFE7C00043AE5 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193E02440566400FE6C75 /* UITextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		ADA1EF03247E057E00043AE5 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				ADA1EF06247E05A800043AE5 /* Repository */,
+				ADA1EF05247E05A000043AE5 /* Request */,
+				ADA1EF04247E059700043AE5 /* Response */,
+				ADFD28F7247E0A0D009BF4F0 /* Store */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		ADA1EF04247E059700043AE5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193AD243E29BB00FE6C75 /* Hiragana.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		ADA1EF05247E05A000043AE5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193D2243EFC2000FE6C75 /* APIRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		ADA1EF06247E05A800043AE5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193D4243F08A900FE6C75 /* HiraganaAPI.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		ADC52B1F243E15C700A62BA7 = {
@@ -285,21 +359,92 @@
 			isa = PBXGroup;
 			children = (
 				ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */,
-				AD419398243E22CA00FE6C75 /* API */,
-				AD41939D243E22F100FE6C75 /* ViewController */,
-				AD41939C243E22EC00FE6C75 /* View */,
+				AD4193D6243F0A9600FE6C75 /* APIKey.swift */,
 				AD41939B243E22E600FE6C75 /* ViewModel */,
-				AD41939A243E22E200FE6C75 /* Model */,
 				AD419399243E22D300FE6C75 /* Extension */,
+				ADA1EEF4247DFB8400043AE5 /* UI */,
+				ADFD28FA247E1617009BF4F0 /* Domain */,
+				ADA1EF03247E057E00043AE5 /* Infrastructure */,
+				ADFD28F9247E14F5009BF4F0 /* Data */,
+				ADFD28FD247E1D19009BF4F0 /* IndependentTools */,
 				ADC52B32243E15C700A62BA7 /* Assets.xcassets */,
-				AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */,
-				AD4193B8243E3D2100FE6C75 /* Home.storyboard */,
-				AD4193CE243EDBA200FE6C75 /* Saved.storyboard */,
 				ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */,
 				ADC52B37243E15C700A62BA7 /* Info.plist */,
 				ADA1EEF1247D10F300043AE5 /* CarthageFrameworks.xcfilelist */,
 			);
 			path = RubiApp;
+			sourceTree = "<group>";
+		};
+		ADFD28F7247E0A0D009BF4F0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				AD41940B2441CCBE00FE6C75 /* VocabularyManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		ADFD28F9247E14F5009BF4F0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD419411244493D800FE6C75 /* APIError.swift */,
+				AD4194132444965100FE6C75 /* ConnectionError.swift */,
+				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
+				AD4194092441CBFF00FE6C75 /* Vocabulary.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ADFD28FA247E1617009BF4F0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				ADFD28FC247E1632009BF4F0 /* Utility */,
+				ADFD28FB247E1626009BF4F0 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		ADFD28FB247E1626009BF4F0 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		ADFD28FC247E1632009BF4F0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */,
+				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ADFD28FD247E1D19009BF4F0 /* IndependentTools */ = {
+			isa = PBXGroup;
+			children = (
+				ADFD28FE247E1D3E009BF4F0 /* Utility */,
+				ADFD28FF247E1DA0009BF4F0 /* Extension */,
+			);
+			path = IndependentTools;
+			sourceTree = "<group>";
+		};
+		ADFD28FE247E1D3E009BF4F0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193C2243EB7A100FE6C75 /* CustomNavigationBar.swift */,
+				AD4194172444A4E400FE6C75 /* UIAlert.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ADFD28FF247E1DA0009BF4F0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD4193BC243E3E6000FE6C75 /* UIColor.swift */,
+				AD4193BE243E3E8F00FE6C75 /* UIFont.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B3BE704EC0D112735B5C853A /* Pods */ = {
