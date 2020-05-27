@@ -50,9 +50,12 @@ class HomeViewModel: ListViewModelProtocol {
     let alertTrigger = PublishSubject<String>()
     private let disposeBag = DisposeBag()
 
-    init() {
+    var homeConvertUsecase: HomeConvertUsecaseProtocl?
+
+    init(homeConvertUsecase: HomeConvertUsecaseProtocl) {
         self.isLoadingBehavior.accept(false)
         self.resultDataBehavior.accept("")
+        self.homeConvertUsecase = homeConvertUsecase
     }
 
     private func toSectionModel(shouldRefresh: Bool = false, type: Data) {
@@ -66,7 +69,9 @@ class HomeViewModel: ListViewModelProtocol {
 
     func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
-        HiraganaModel.post(sentence: sentence)
+        //TODO: requestはHomeUsecase層がもつべきであるので修正する→現在RequestのResponseObject型になっているからusecase側で返す型を明確にする
+        let request = HomeRepository.PostKanzi(sentence: sentence)
+        homeConvertUsecase?.postKanzi(request: request)
             .subscribe(onNext: { (data) in
                 self.isLoadingBehavior.accept(false)
                 self.resultDataBehavior.accept(data.converted)

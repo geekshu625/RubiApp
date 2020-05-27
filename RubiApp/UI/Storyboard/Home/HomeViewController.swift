@@ -65,7 +65,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate {
         resultTableView.tableFooterView = UIView()
         resultTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
 
-        viewModel = HomeViewModel()
+        viewModel = HomeViewModel(homeConvertUsecase: HomeUsecase())
         viewModel.dataObservable.bind(to: resultTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
         viewModel.isLoading
