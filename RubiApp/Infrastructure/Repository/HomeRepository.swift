@@ -1,5 +1,5 @@
 //
-//  HiraganaAPI.swift
+//  HomeRepository.swift
 //  RubiApp
 //
 //  Created by 松木周 on 2020/04/09.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class HiraganaAPI {
+final class HomeRepository {
 
     struct PostKanzi: APIRequest {
 

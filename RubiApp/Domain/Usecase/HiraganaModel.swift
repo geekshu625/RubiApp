@@ -13,7 +13,7 @@ struct HiraganaModel {
     static let apiClient = HiraganaAPIClient()
 
     static func post(requestId: String, sentence: String, outputType: String) -> Observable<Hiragana> {
-        let request = HiraganaAPI.PostKanzi.init(requestId: requestId, sentence: sentence, outputType: outputType)
+        let request = HomeRepository.PostKanzi.init(requestId: requestId, sentence: sentence, outputType: outputType)
         return self.apiClient.call(request: request)
     }
 }
