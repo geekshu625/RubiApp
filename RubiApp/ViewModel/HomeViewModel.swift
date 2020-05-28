@@ -69,20 +69,21 @@ class HomeViewModel: ListViewModelProtocol {
 
     func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
-        //TODO: requestはHomeUsecase層がもつべきであるので修正する→現在RequestのResponseObject型になっているからusecase側で返す型を明確にする
-        let request = HomeRepository.PostKanzi(sentence: sentence)
-        homeConvertUsecase?.postKanzi(request: request)
-            .subscribe(onNext: { (data) in
+        homeConvertUsecase?.postKanzi(sentence: sentence, completion: { (result) in
+            switch result {
+            case .success(let response):
                 self.isLoadingBehavior.accept(false)
-                self.resultDataBehavior.accept(data.converted)
-                let data = Data(hiragana: data, kanzi: sentence)
+                self.resultDataBehavior.accept(response.converted)
+                let data = Data(hiragana: response, kanzi: sentence)
                 self.toSectionModel(type: data)
-            }, onError: { (error) in
-                self.bindError(error)
+            case .failure(let error):
+                self.bindError(error.errorDescription!)
                 self.isLoadingBehavior.accept(false)
-            })
-            .disposed(by: disposeBag)
+            }
+        })
+
     }
+
     //Realmに保存
     func createVocabulary(vocabulary: Vocabulary) {
         VocabularyManager.add(vocabulary: vocabulary)
@@ -93,14 +94,7 @@ class HomeViewModel: ListViewModelProtocol {
         VocabularyManager.delete(vocabulary: vocabulary)
     }
     //TODO: エラー処理を追加
-    private func bindError(_ error: Error) {
-        switch error {
-        case let error as HiraganaAPIError:
-            self.alertTrigger.onNext(error.message)
-        case let error as ConnectionError:
-            self.alertTrigger.onNext(error.message)
-        default:
-            self.alertTrigger.onNext(error.localizedDescription)
-        }
+    private func bindError(_ errorMessage: String) {
+        self.alertTrigger.onNext(errorMessage)
     }
 }

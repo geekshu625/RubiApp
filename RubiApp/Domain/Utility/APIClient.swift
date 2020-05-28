@@ -27,7 +27,7 @@ class HiraganaAPIClient {
 
                         //APIのエラー処理
                         if let errorModel = try? JSONDecoder().decode(APIErrorRooter.self, from: data) {
-                            let apiError = HiraganaAPIError.init(errorCode: errorModel.error.code)
+                            let apiError = ServerError.init(errorCode: errorModel.error.code)
                             observer.onError(apiError)
                         }
 
@@ -39,7 +39,7 @@ class HiraganaAPIClient {
 
                     case .failure(let error):
                         //ネットワークのエラー処理
-                        let connectingError = ConnectionError(errorCode: error._code)
+                        let connectingError = NetworkError(errorCode: error._code)
                         observer.on(.error(connectingError))
                     }
             }
