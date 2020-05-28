@@ -25,7 +25,11 @@ extension HomeTableViewData: IdentifiableType, Equatable {
     }
 }
 
-class HomeViewModel: ListViewModelProtocol {
+protocol HomeConvertUsecaseProtocl: AnyObject {
+    func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
+}
+
+class HomeViewModel: ListViewModelProtocol, Injectable {
 
     typealias Data = HomeTableViewData
     typealias SectionModel = AnimatableSectionModel<Int, Data>
@@ -52,10 +56,14 @@ class HomeViewModel: ListViewModelProtocol {
 
     var homeConvertUsecase: HomeConvertUsecaseProtocl?
 
-    init(homeConvertUsecase: HomeConvertUsecaseProtocl) {
+    struct Dependency {
+        let homeConvertUsecase: HomeConvertUsecaseProtocl
+    }
+
+    required init(dependency: Dependency) {
         self.isLoadingBehavior.accept(false)
         self.resultDataBehavior.accept("")
-        self.homeConvertUsecase = homeConvertUsecase
+        self.homeConvertUsecase = dependency.homeConvertUsecase
     }
 
     private func toSectionModel(shouldRefresh: Bool = false, type: Data) {

@@ -9,11 +9,6 @@
 import Foundation
 import Alamofire
 
-//TODO: Usecase層に責務としてここに持たせるべきではない、ViewControllerかViewModelで宣言するべき
-protocol HomeConvertUsecaseProtocl: AnyObject {
-    func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
-}
-
 final class HomeUsecase {}
 
 extension HomeUsecase: HomeConvertUsecaseProtocl {

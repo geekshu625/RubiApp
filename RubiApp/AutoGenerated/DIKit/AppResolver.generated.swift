@@ -23,6 +23,10 @@ extension AppResolver {
         return provideResolver()
     }
 
+    func resolveHomeConvertUsecaseProtocl() -> HomeConvertUsecaseProtocl {
+        return provideHomeConvertUsecase()
+    }
+
     func resolveHomeViewModel() -> HomeViewModel {
         return provideHomeViewModel()
     }
