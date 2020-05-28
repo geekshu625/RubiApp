@@ -1,5 +1,5 @@
 //
-//  ConnectionError.swift
+//  NetworkError.swift
 //  RubiApp
 //
 //  Created by 松木周 on 2020/04/13.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ConnectionError: Error {
+struct NetworkError: Error {
     var message: String
 
     init(errorCode: Int) {

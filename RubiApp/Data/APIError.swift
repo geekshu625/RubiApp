@@ -16,7 +16,7 @@ struct APIError: Codable {
     let code: Int
 }
 
-struct HiraganaAPIError: Error {
+struct ServerError: Error {
 
     var message: String
     init(errorCode: Int) {
