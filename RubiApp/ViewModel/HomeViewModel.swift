@@ -25,7 +25,7 @@ extension HomeTableViewData: IdentifiableType, Equatable {
     }
 }
 
-protocol HomeConvertUsecaseProtocl: AnyObject {
+protocol HomeConvertUsecaseProtocol: AnyObject {
     func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
 }
 
@@ -54,10 +54,10 @@ class HomeViewModel: ListViewModelProtocol, Injectable {
     let alertTrigger = PublishSubject<String>()
     private let disposeBag = DisposeBag()
 
-    var homeConvertUsecase: HomeConvertUsecaseProtocl?
+    var homeConvertUsecase: HomeConvertUsecaseProtocol?
 
     struct Dependency {
-        let homeConvertUsecase: HomeConvertUsecaseProtocl
+        let homeConvertUsecase: HomeConvertUsecaseProtocol
     }
 
     required init(dependency: Dependency) {

@@ -23,7 +23,7 @@ extension AppResolver {
         return provideResolver()
     }
 
-    func resolveHomeConvertUsecaseProtocl() -> HomeConvertUsecaseProtocl {
+    func resolveHomeConvertUsecaseProtocol() -> HomeConvertUsecaseProtocol {
         return provideHomeConvertUsecase()
     }
 

@@ -11,7 +11,7 @@ import Alamofire
 
 final class HomeUsecase {}
 
-extension HomeUsecase: HomeConvertUsecaseProtocl {
+extension HomeUsecase: HomeConvertUsecaseProtocol {
 
     func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void)) {
 
