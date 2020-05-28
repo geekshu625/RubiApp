@@ -41,12 +41,6 @@ class HomeViewModel: ListViewModelProtocol {
     }()
     private var isLoadingBehavior = BehaviorRelay<Bool>(value: false)
 
-    //保存しているかどうかの状態を保持している
-    //    lazy var isSaved: SharedSequence<DriverSharingStrategy, Bool> = {
-    //        return self.isSavedBehavior.asDriver()
-    //    }()
-    //    private var isSavedBehavior = BehaviorRelay<Bool>(value: SaveVocabulary(isSaved: false))
-
     //変換したひらがなを保持している
     lazy var resultData: SharedSequence<DriverSharingStrategy, String> = {
         return self.resultDataBehavior.asDriver()
@@ -56,9 +50,12 @@ class HomeViewModel: ListViewModelProtocol {
     let alertTrigger = PublishSubject<String>()
     private let disposeBag = DisposeBag()
 
-    init() {
+    var homeConvertUsecase: HomeConvertUsecaseProtocl?
+
+    init(homeConvertUsecase: HomeConvertUsecaseProtocl) {
         self.isLoadingBehavior.accept(false)
         self.resultDataBehavior.accept("")
+        self.homeConvertUsecase = homeConvertUsecase
     }
 
     private func toSectionModel(shouldRefresh: Bool = false, type: Data) {
@@ -70,29 +67,22 @@ class HomeViewModel: ListViewModelProtocol {
         dataRelay.accept([sectionModel])
     }
 
-    func post(requestId: String, sentence: String, outputType: String) {
+    func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
-        HiraganaModel.post(requestId: requestId, sentence: sentence, outputType: outputType)
-            .subscribe(onNext: { (data) in
+        homeConvertUsecase?.postKanzi(sentence: sentence, completion: { (result) in
+            switch result {
+            case .success(let response):
                 self.isLoadingBehavior.accept(false)
-                self.resultDataBehavior.accept(data.converted)
-                let data = Data(hiragana: data, kanzi: sentence)
+                self.resultDataBehavior.accept(response.converted)
+                let data = Data(hiragana: response, kanzi: sentence)
                 self.toSectionModel(type: data)
-            }, onError: { (error) in
-                self.bindError(error)
+            case .failure(let error):
+                self.bindError(error.errorDescription!)
                 self.isLoadingBehavior.accept(false)
-            })
-            .disposed(by: disposeBag)
-    }
+            }
+        })
 
-    //保存されているかどうかを取得
-    //    func fetch() {
-    //        VocabularyManager.getIsSaved(disposeBag: disposeBag)
-    //            .subscribe(onNext: { (saveVocablary) in
-    //                self.isSavedBehavior.accept(saveVocablary)
-    //            })
-    //        .disposed(by: disposeBag)
-    //    }
+    }
 
     //Realmに保存
     func createVocabulary(vocabulary: Vocabulary) {
@@ -104,14 +94,7 @@ class HomeViewModel: ListViewModelProtocol {
         VocabularyManager.delete(vocabulary: vocabulary)
     }
     //TODO: エラー処理を追加
-    private func bindError(_ error: Error) {
-        switch error {
-        case let error as HiraganaAPIError:
-            self.alertTrigger.onNext(error.message)
-        case let error as ConnectionError:
-            self.alertTrigger.onNext(error.message)
-        default:
-            self.alertTrigger.onNext(error.localizedDescription)
-        }
+    private func bindError(_ errorMessage: String) {
+        self.alertTrigger.onNext(errorMessage)
     }
 }
