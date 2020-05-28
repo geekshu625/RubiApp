@@ -11,8 +11,6 @@
 		8DA386131D1B34C6DFF0D861 /* Pods_RubiAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A040D4CDA85921BAC25A7 /* Pods_RubiAppTests.framework */; platformFilter = ios; };
 		AD20F6CC247E71370099E14A /* HomeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20F6CB247E71370099E14A /* HomeRepositoryTests.swift */; };
 		AD4193AE243E29BB00FE6C75 /* ConvertedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AD243E29BB00FE6C75 /* ConvertedResponse.swift */; };
-		AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */; };
-		AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193B4243E2FD400FE6C75 /* APIClient.swift */; };
 		AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */; };
 		AD4193B9243E3D2100FE6C75 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4193B8243E3D2100FE6C75 /* Home.storyboard */; };
 		AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */; };
@@ -29,7 +27,6 @@
 		AD4193D5243F08A900FE6C75 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D4243F08A900FE6C75 /* HomeRepository.swift */; };
 		AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D6243F0A9600FE6C75 /* APIKey.swift */; };
 		AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D8243F101D00FE6C75 /* BodyData.swift */; };
-		AD4193DB243F295800FE6C75 /* HiraganaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DA243F295800FE6C75 /* HiraganaModel.swift */; };
 		AD4193DD243F2DE300FE6C75 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */; };
 		AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */; };
 		AD4193E12440566400FE6C75 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193E02440566400FE6C75 /* UITextField.swift */; };
@@ -130,8 +127,6 @@
 		AD4193A3243E264100FE6C75 /* RubiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4193A7243E264100FE6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4193AD243E29BB00FE6C75 /* ConvertedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedResponse.swift; sourceTree = "<group>"; };
-		AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
-		AD4193B4243E2FD400FE6C75 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		AD4193B8243E3D2100FE6C75 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		AD4193BA243E3DC500FE6C75 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +143,6 @@
 		AD4193D4243F08A900FE6C75 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		AD4193D6243F0A9600FE6C75 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AD4193D8243F101D00FE6C75 /* BodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyData.swift; sourceTree = "<group>"; };
-		AD4193DA243F295800FE6C75 /* HiraganaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaModel.swift; sourceTree = "<group>"; };
 		AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		AD4193E02440566400FE6C75 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -498,7 +492,6 @@
 		ADFD28FB247E1626009BF4F0 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				AD4193DA243F295800FE6C75 /* HiraganaModel.swift */,
 				ADFD2900247E48FB009BF4F0 /* HomeUsecase.swift */,
 			);
 			path = Usecase;
@@ -507,8 +500,6 @@
 		ADFD28FC247E1632009BF4F0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				AD4193AF243E2E4400FE6C75 /* APIClientProtocol.swift */,
-				AD4193B4243E2FD400FE6C75 /* APIClient.swift */,
 				ADBBFDC0247F3FBA00C13F6A /* AppError.swift */,
 			);
 			path = Utility;
@@ -793,14 +784,11 @@
 				AD4193D1243EDCB600FE6C75 /* SavedViewController.swift in Sources */,
 				AD4193C3243EB7A100FE6C75 /* CustomNavigationBar.swift in Sources */,
 				AD4193D5243F08A900FE6C75 /* HomeRepository.swift in Sources */,
-				AD4193B0243E2E4400FE6C75 /* APIClientProtocol.swift in Sources */,
 				AD4193C7243EC44900FE6C75 /* UITextView.swift in Sources */,
 				AD41940C2441CCBE00FE6C75 /* VocabularyManager.swift in Sources */,
-				AD4193B5243E2FD400FE6C75 /* APIClient.swift in Sources */,
 				ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */,
 				AD4194102442F80500FE6C75 /* SavedViewModel.swift in Sources */,
 				ADBBFDC1247F3FBA00C13F6A /* AppError.swift in Sources */,
-				AD4193DB243F295800FE6C75 /* HiraganaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
