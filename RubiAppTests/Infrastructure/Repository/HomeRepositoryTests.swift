@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Alamofire
 import RxSwift
 
 @testable import RubiApp
@@ -17,14 +18,34 @@ class HomeRepositoryTests: XCTestCase {
         StubConvertKanzi.turnOnStub()
     }
 
-    func testConvertKanzi() {
+    func testPostKanzi() {
 
         let expectation = self.expectation(description: "expectation")
-        HiraganaModel.post(sentence: "変換")
-            .subscribe(onNext: { (response) in
+
+        let request = HomeRepository.PostKanzi(sentence: "変換")
+        let body = try? JSONEncoder().encode(request.body)
+        let task = AF.upload(body!, with: request.makeRequest())
+            .response { (response) in
                 defer { expectation.fulfill() }
-                XCTAssertEqual(response.converted, "へんかん")
-            })
+                switch response.result {
+                case .success:
+                    guard let data = response.data else { return }
+
+                    //APIのエラー処理
+                    if let errorModel = try? JSONDecoder().decode(APIErrorRooter.self, from: data) {
+                        XCTFail(AppError.server(errorModel.error.code).localizedDescription)
+                    }
+
+                    let hiragana = try? JSONDecoder().decode(ConvertedResponse.self, from: data)
+                    XCTAssertEqual(hiragana?.converted, "へんかん")
+
+                case .failure(let error):
+                    //ネットワークのエラー処理
+                    XCTFail(AppError.network(error._code).localizedDescription)
+                }
+        }
+
+        task.resume()
 
         wait(for: [expectation], timeout: 5)
 
