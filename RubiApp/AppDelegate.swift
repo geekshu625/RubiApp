@@ -11,6 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static let resolver: AppResolver = AppResolverImpl()
+
     var window: UIWindow?
 
 

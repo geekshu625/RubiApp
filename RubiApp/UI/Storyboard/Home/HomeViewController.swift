@@ -12,8 +12,9 @@ import RxCocoa
 import RxDataSources
 import SafariServices
 import SVProgressHUD
+import DIKit
 
-final class HomeViewController: UIViewController, UITableViewDelegate {
+final class HomeViewController: UIViewController, UITableViewDelegate, PropertyInjectable {
 
     @IBOutlet private weak var textField: MainTextFieldStyle!
     @IBOutlet private weak var pasteButton: UIButton!
@@ -22,6 +23,12 @@ final class HomeViewController: UIViewController, UITableViewDelegate {
     @IBOutlet private weak var changedTextLabel: SubLabelStyle!
     @IBOutlet private weak var indicator: UIActivityIndicatorView!
     @IBOutlet private weak var resultTableView: UITableView!
+
+    struct Dependency {
+        let homeViewModel: HomeViewModel
+    }
+
+    var dependency: Dependency!
 
     //swiftlint:disable:next line_length
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
@@ -56,6 +63,9 @@ final class HomeViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        AppDelegate.resolver.injectToHomeViewController(self)
+        viewModel = dependency.homeViewModel
+
         self.view.backgroundColor = .backgroud
         self.view.addGestureRecognizer(backgroundTapGesture)
         tabBarController?.tabBar.isTranslucent = false
@@ -65,7 +75,6 @@ final class HomeViewController: UIViewController, UITableViewDelegate {
         resultTableView.tableFooterView = UIView()
         resultTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
 
-        viewModel = HomeViewModel(homeConvertUsecase: HomeUsecase())
         viewModel.dataObservable.bind(to: resultTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
         viewModel.isLoading

@@ -60,3 +60,6 @@ Carthage/Checkouts
 # Bundler
 
 vendor/bundles
+
+#Mintのキャッシュ
+/mint
