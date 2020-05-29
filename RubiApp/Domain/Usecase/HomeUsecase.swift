@@ -11,11 +11,11 @@ import Alamofire
 
 final class HomeUsecase {}
 
-extension HomeUsecase: HomeConvertUsecaseProtocol {
+extension HomeUsecase: HomeConvertSentenseUsecaseProtocol {
 
-    func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void)) {
+    func postConvertSentence(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void)) {
 
-        let request = HomeRepository.PostKanzi(sentence: sentence)
+        let request = HomeRepository.PostConvertSentence(sentence: sentence)
         let body = try? JSONEncoder().encode(request.body)
 
         let task = AF.upload(body!, with: request.makeRequest())

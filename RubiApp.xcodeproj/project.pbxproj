@@ -51,7 +51,7 @@
 		ADA1EEE8247D0B0600043AE5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED1247D0B0600043AE5 /* Alamofire.framework */; };
 		ADA1EEEA247D0B0600043AE5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED2247D0B0600043AE5 /* RealmSwift.framework */; };
 		ADA1EEEC247D0B0600043AE5 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EED3247D0B0600043AE5 /* RxRelay.framework */; };
-		ADBB0556247E6E50004B9E68 /* StubConvertKanzi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB0555247E6E50004B9E68 /* StubConvertKanzi.swift */; };
+		ADBB0556247E6E50004B9E68 /* StubConvertSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB0555247E6E50004B9E68 /* StubConvertSentence.swift */; };
 		ADBBFDB1247E821800C13F6A /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADA1EED1247D0B0600043AE5 /* Alamofire.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADBBFDB2247E821800C13F6A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADA1EECE247D0B0600043AE5 /* APIKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADBBFDB3247E821800C13F6A /* Differentiator.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADA1EECA247D0B0600043AE5 /* Differentiator.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -173,7 +173,7 @@
 		ADA1EED2247D0B0600043AE5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		ADA1EED3247D0B0600043AE5 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		ADA1EEF1247D10F300043AE5 /* CarthageFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = CarthageFrameworks.xcfilelist; sourceTree = "<group>"; };
-		ADBB0555247E6E50004B9E68 /* StubConvertKanzi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubConvertKanzi.swift; sourceTree = "<group>"; };
+		ADBB0555247E6E50004B9E68 /* StubConvertSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubConvertSentence.swift; sourceTree = "<group>"; };
 		ADBBFDC0247F3FBA00C13F6A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -438,7 +438,7 @@
 		ADBB0554247E6E10004B9E68 /* Stub */ = {
 			isa = PBXGroup;
 			children = (
-				ADBB0555247E6E50004B9E68 /* StubConvertKanzi.swift */,
+				ADBB0555247E6E50004B9E68 /* StubConvertSentence.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -800,7 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD20F6CC247E71370099E14A /* HomeRepositoryTests.swift in Sources */,
-				ADBB0556247E6E50004B9E68 /* StubConvertKanzi.swift in Sources */,
+				ADBB0556247E6E50004B9E68 /* StubConvertSentence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,14 +15,14 @@ import RxSwift
 class HomeRepositoryTests: XCTestCase {
 
     override func setUp() {
-        StubConvertKanzi.turnOnStub()
+        StubConvertSentence.turnOnStub()
     }
 
-    func testPostKanzi() {
+    func testPostConvertSentence() {
 
         let expectation = self.expectation(description: "expectation")
 
-        let request = HomeRepository.PostKanzi(sentence: "変換")
+        let request = HomeRepository.PostConvertSentence(sentence: "変換")
         let body = try? JSONEncoder().encode(request.body)
         let task = AF.upload(body!, with: request.makeRequest())
             .response { (response) in

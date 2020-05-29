@@ -25,8 +25,8 @@ extension HomeTableViewData: IdentifiableType, Equatable {
     }
 }
 
-protocol HomeConvertUsecaseProtocol: AnyObject {
-    func postKanzi(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
+protocol HomeConvertSentenseUsecaseProtocol: AnyObject {
+    func postConvertSentence(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
 }
 
 class HomeViewModel: ListViewModelProtocol, Injectable {
@@ -54,10 +54,10 @@ class HomeViewModel: ListViewModelProtocol, Injectable {
     let alertTrigger = PublishSubject<String>()
     private let disposeBag = DisposeBag()
 
-    var homeConvertUsecase: HomeConvertUsecaseProtocol?
+    var homeConvertUsecase: HomeConvertSentenseUsecaseProtocol?
 
     struct Dependency {
-        let homeConvertUsecase: HomeConvertUsecaseProtocol
+        let homeConvertUsecase: HomeConvertSentenseUsecaseProtocol
     }
 
     required init(dependency: Dependency) {
@@ -77,7 +77,7 @@ class HomeViewModel: ListViewModelProtocol, Injectable {
 
     func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
-        homeConvertUsecase?.postKanzi(sentence: sentence, completion: { (result) in
+        homeConvertUsecase?.postConvertSentence(sentence: sentence, completion: { (result) in
             switch result {
             case .success(let response):
                 self.isLoadingBehavior.accept(false)
