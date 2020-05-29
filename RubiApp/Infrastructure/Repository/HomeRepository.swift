@@ -11,7 +11,7 @@ import Alamofire
 
 final class HomeRepository {
 
-    struct PostKanzi: APIRequest {
+    struct PostConvertSentence: APIRequest {
 
         typealias ResponseObject = ConvertedResponse
 

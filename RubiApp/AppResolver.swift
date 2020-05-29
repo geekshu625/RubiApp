@@ -14,7 +14,7 @@ protocol AppResolver: DIKit.Resolver {
 
     func provideHomeViewModel() -> HomeViewModel
 
-    func provideHomeConvertUsecase() -> HomeConvertUsecaseProtocol
+    func provideHomeConvertUsecase() -> HomeConvertSentenseUsecaseProtocol
 }
 
 final class AppResolverImpl: AppResolver {
@@ -26,11 +26,11 @@ final class AppResolverImpl: AppResolver {
     }
 
     func provideHomeViewModel() -> HomeViewModel {
-        let homeConvertUsecase = resolveHomeConvertUsecaseProtocol()
+        let homeConvertUsecase = resolveHomeConvertSentenseUsecaseProtocol()
         return HomeViewModel(dependency: .init(homeConvertUsecase: homeConvertUsecase))
     }
 
-    func provideHomeConvertUsecase() -> HomeConvertUsecaseProtocol {
+    func provideHomeConvertUsecase() -> HomeConvertSentenseUsecaseProtocol {
         return homeUsecase
     }
 
