@@ -40,6 +40,8 @@
 		AD48A16A247F691E00B2F810 /* AppResolver.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48A169247F691E00B2F810 /* AppResolver.generated.swift */; };
 		AD48CA53247FAFBA00D396B2 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA52247FAFBA00D396B2 /* Injectable.swift */; };
 		AD48CA55247FB2F500D396B2 /* AppResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA54247FB2F500D396B2 /* AppResolver.swift */; };
+		AD48CA8F2487AA4600D396B2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD48CA8E2487AA4600D396B2 /* Setting.storyboard */; };
+		AD48CA922487AACF00D396B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA912487AACF00D396B2 /* SettingViewController.swift */; };
 		ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */; };
 		ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */; };
 		ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC9247D0B0600043AE5 /* DIKit.framework */; };
@@ -159,6 +161,8 @@
 		AD48A169247F691E00B2F810 /* AppResolver.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResolver.generated.swift; sourceTree = "<group>"; };
 		AD48CA52247FAFBA00D396B2 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
 		AD48CA54247FB2F500D396B2 /* AppResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResolver.swift; sourceTree = "<group>"; };
+		AD48CA8E2487AA4600D396B2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		AD48CA912487AACF00D396B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		ADA1EEC9247D0B0600043AE5 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
@@ -318,6 +322,14 @@
 			path = R.swift;
 			sourceTree = "<group>";
 		};
+		AD48CA902487AA5E00D396B2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AD48CA912487AACF00D396B2 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		ADA1EEF4247DFB8400043AE5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +346,7 @@
 				AD4193B6243E3D1A00FE6C75 /* TabBar.storyboard */,
 				AD4193B8243E3D2100FE6C75 /* Home.storyboard */,
 				AD4193CE243EDBA200FE6C75 /* Saved.storyboard */,
+				AD48CA8E2487AA4600D396B2 /* Setting.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -343,6 +356,7 @@
 			children = (
 				ADA1EEFD247DFD6900043AE5 /* Home */,
 				ADA1EEFE247DFD7600043AE5 /* Saved */,
+				AD48CA902487AA5E00D396B2 /* Setting */,
 			);
 			name = ViewController;
 			path = Storyboard;
@@ -674,6 +688,7 @@
 			files = (
 				AD4193CD243ED85200FE6C75 /* ResultTableViewCell.xib in Resources */,
 				ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */,
+				AD48CA8F2487AA4600D396B2 /* Setting.storyboard in Resources */,
 				AD4193B7243E3D1A00FE6C75 /* TabBar.storyboard in Resources */,
 				ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */,
 				AD4193CF243EDBA200FE6C75 /* Saved.storyboard in Resources */,
@@ -842,6 +857,7 @@
 				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
 				AD48CA55247FB2F500D396B2 /* AppResolver.swift in Sources */,
 				AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */,
+				AD48CA922487AACF00D396B2 /* SettingViewController.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD419412244493D800FE6C75 /* APIError.swift in Sources */,
 				AD48A16A247F691E00B2F810 /* AppResolver.generated.swift in Sources */,
