@@ -330,11 +330,19 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		AD48CA932487AB3800D396B2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		ADA1EEF4247DFB8400043AE5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				ADA1EEF9247DFC8B00043AE5 /* Storyboard */,
 				ADA1EEFB247DFCA000043AE5 /* ViewController */,
+				AD48CA932487AB3800D396B2 /* Router */,
 				ADA1EEFC247DFCB500043AE5 /* CommonView */,
 			);
 			path = UI;
