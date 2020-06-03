@@ -42,6 +42,7 @@
 		AD48CA55247FB2F500D396B2 /* AppResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA54247FB2F500D396B2 /* AppResolver.swift */; };
 		AD48CA8F2487AA4600D396B2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD48CA8E2487AA4600D396B2 /* Setting.storyboard */; };
 		AD48CA922487AACF00D396B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA912487AACF00D396B2 /* SettingViewController.swift */; };
+		AD48CA952487ABFA00D396B2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA942487ABFA00D396B2 /* HomeRouter.swift */; };
 		ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */; };
 		ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */; };
 		ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC9247D0B0600043AE5 /* DIKit.framework */; };
@@ -163,6 +164,7 @@
 		AD48CA54247FB2F500D396B2 /* AppResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResolver.swift; sourceTree = "<group>"; };
 		AD48CA8E2487AA4600D396B2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		AD48CA912487AACF00D396B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AD48CA942487ABFA00D396B2 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		ADA1EEC9247D0B0600043AE5 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 		AD48CA932487AB3800D396B2 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				AD48CA942487ABFA00D396B2 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				ADFD2901247E48FB009BF4F0 /* HomeUsecase.swift in Sources */,
 				AD4194162444A24D00FE6C75 /* UIBarButtonItem.swift in Sources */,
 				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
+				AD48CA952487ABFA00D396B2 /* HomeRouter.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
 				AD4194142444965100FE6C75 /* NetworkError.swift in Sources */,
 				AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */,
