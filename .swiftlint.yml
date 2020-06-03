@@ -20,6 +20,9 @@ line_length:
 
 identifier_name:
   max_length: 50
+  excluded:
+    - at
+    - vc
 
 type_name:
   max_length: 50
