@@ -111,10 +111,9 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
                     self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
-                let encodeUrl = self!.toEncodeUrl(text: text!)
-                guard let url = URL(string: encodeUrl) else { return }
-                let safariViewController = SFSafariViewController(url: url)
-                self?.present(safariViewController, animated: true, completion: nil)
+
+                HomeRouter.moveToSearchWordWebView(from: self!, searchSentence: text!)
+
             })
             .disposed(by: disposeBag)
 
@@ -148,12 +147,6 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
         }
         .disposed(by: disposeBag)
 
-    }
-
-    private func toEncodeUrl(text: String) -> String {
-        let urlString: String = "https://dictionary.goo.ne.jp/srch/all/\(text)/m0u/"
-        let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        return encodeUrlString
     }
 
     private func dismissKeyBoard() {
