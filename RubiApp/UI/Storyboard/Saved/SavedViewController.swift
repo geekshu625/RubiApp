@@ -14,7 +14,7 @@ import RxDataSources
 final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol {
 
     @IBOutlet private weak var savedTableView: UITableView!
-    @IBOutlet private weak var deleteButton: UIBarButtonItem!
+    @IBOutlet private weak var settingButton: UIBarButtonItem!
 
     //swiftlint:disable:next line_length
     lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
@@ -47,11 +47,9 @@ final class SavedViewController: UIViewController, UITableViewDelegate, AlertPro
         viewModel = SavedViewModel()
         viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
 
-        deleteButton.rx.tap.asDriver()
+        settingButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
-                self!.showAlert(title: "確認", message: "保存しているデータを全て削除してもいいですか？") {
-                    self!.viewModel.deleteAllVocabulary()
-                }
+                SavedRouter.moveToSettingViewController(from: self!)
             })
             .disposed(by: disposeBag)
     }

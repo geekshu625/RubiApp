@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y3N-i5-MZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y3N-i5-MZo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,12 +42,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="保存済み" image="Save_tab" id="Umo-nL-0SY"/>
                     <navigationItem key="navigationItem" title="保存済み" id="Y4u-25-GEc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="cCP-6i-aN1"/>
+                        <barButtonItem key="rightBarButtonItem" image="Setting" id="cCP-6i-aN1"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="deleteButton" destination="cCP-6i-aN1" id="XKR-2G-qk5"/>
                         <outlet property="savedTableView" destination="8qH-S2-wBJ" id="5ox-oP-L6C"/>
+                        <outlet property="settingButton" destination="cCP-6i-aN1" id="NJW-Zz-Uum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCG-e1-Lnp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,5 +75,6 @@
     </scenes>
     <resources>
         <image name="Save_tab" width="24" height="24"/>
+        <image name="Setting" width="24" height="24"/>
     </resources>
 </document>
