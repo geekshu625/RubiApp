@@ -63,3 +63,13 @@ vendor/bundles
 
 #Mintのキャッシュ
 /mint
+
+# DIKit
+#
+# to prevent unnecessary conflicts.
+AppResolver.generated.swift
+
+# R.swift
+#
+# to prevent unnecessary conflicts.
+R.generated.swift
