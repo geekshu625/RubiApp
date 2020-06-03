@@ -43,6 +43,8 @@
 		AD48CA8F2487AA4600D396B2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD48CA8E2487AA4600D396B2 /* Setting.storyboard */; };
 		AD48CA922487AACF00D396B2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA912487AACF00D396B2 /* SettingViewController.swift */; };
 		AD48CA952487ABFA00D396B2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA942487ABFA00D396B2 /* HomeRouter.swift */; };
+		AD48CA972487B66800D396B2 /* SavedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA962487B66800D396B2 /* SavedRouter.swift */; };
+		AD48CA992487BA1400D396B2 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA982487BA1400D396B2 /* R.generated.swift */; };
 		ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */; };
 		ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */; };
 		ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC9247D0B0600043AE5 /* DIKit.framework */; };
@@ -165,6 +167,8 @@
 		AD48CA8E2487AA4600D396B2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		AD48CA912487AACF00D396B2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AD48CA942487ABFA00D396B2 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		AD48CA962487B66800D396B2 /* SavedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRouter.swift; sourceTree = "<group>"; };
+		AD48CA982487BA1400D396B2 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		ADA1EEC9247D0B0600043AE5 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 		AD48CA8D2487A4F600D396B2 /* R.swift */ = {
 			isa = PBXGroup;
 			children = (
+				AD48CA982487BA1400D396B2 /* R.generated.swift */,
 			);
 			path = R.swift;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				AD48CA942487ABFA00D396B2 /* HomeRouter.swift */,
+				AD48CA962487B66800D396B2 /* SavedRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -863,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD48CA972487B66800D396B2 /* SavedRouter.swift in Sources */,
 				AD4193CC243ED85200FE6C75 /* ResultTableViewCell.swift in Sources */,
 				AD4193DD243F2DE300FE6C75 /* HomeViewModel.swift in Sources */,
 				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
@@ -882,6 +889,7 @@
 				AD41940A2441CBFF00FE6C75 /* Vocabulary.swift in Sources */,
 				AD4194182444A4E400FE6C75 /* UIAlert.swift in Sources */,
 				AD4193AE243E29BB00FE6C75 /* ConvertedResponse.swift in Sources */,
+				AD48CA992487BA1400D396B2 /* R.generated.swift in Sources */,
 				AD4193BF243E3E8F00FE6C75 /* UIFont.swift in Sources */,
 				AD4193C5243EC3C400FE6C75 /* UILabel.swift in Sources */,
 				AD4193E12440566400FE6C75 /* UITextField.swift in Sources */,
