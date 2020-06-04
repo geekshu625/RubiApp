@@ -59,12 +59,9 @@ MVVMの責務の認識は以下です。
 コンポーネント別で作業分担が明確にでき、FatViewControllerを避けることができるため。  
 また、個人的にRxSwiftでのバインディング処理を学びなおしたかったからです！
 
-# 反省点
-今回の課題に取り組んだ中で1つの反省点がありました。
+### レイヤードアーキテクチャにした背景
+システムアーキテクチャを導入するにあたって、学習コスト・導入コストが一番低いと感じ、今回のアプリ範囲だとレイヤードアーキテクチャが適切だと感じたからです。
 
-## 画面レイアウト
-今回、画面レイアウト作成はStoryboardを使用しました。   
-個人的にコードレイアウトほうが、テストの書きやすさや抽象化できるという点で便利だと感じています。しかし、これまで関わったプロジェクトでは比較的にStoryboardが多く、コードレイアウトサイクルの知識に対して自信がなかったためStoryboardを使用しました。
 
 # 参考文献
 RxRealmについて
@@ -75,8 +72,5 @@ RxRealmについて
 MVVMについて
 - https://qiita.com/tamappe/items/1de1e1ec0a03ce4bb2f5
 
-Carthageについて
-- https://qiita.com/yutat93/items/97fe9bc2bf2e97da7ec1
-
-Github Actionsについて
-- https://qiita.com/Tommydevelop/items/e26654447e43edd4286e
+レイヤードアーキテクチャ
+- https://little-hands.hatenablog.com/entry/2018/12/10/ddd-architecture
