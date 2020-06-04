@@ -8,5 +8,5 @@
 
 import Foundation
 
-let APIKey = "ここにAPIKeyをいれてください"
+let APIKey = "ここにAPIKeyをいれてく"
 
