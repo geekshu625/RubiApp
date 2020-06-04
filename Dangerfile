@@ -32,6 +32,28 @@ def find_github_issue
 
 end
 
+# End プロジェクトごとの変数定義
+
+# PR チェック結果を定義
+class CheckResult
+
+    attr_accessor :warnings, :errors, :title, :message
+
+    def initialize(title)
+        @warnings = 0
+        @errors = 0
+        @title = "## " + title
+        @message = markdown_message_template
+    end
+
+    def markdown_message_template
+        template = "確認項目 | 結果\n"
+        template << "|--- | --- |\n"
+        return template
+    end
+
+end
+
 # APIKyeのファイルに差分がでていないか確認する
 def check_apikey_file_has_been_modified
 
