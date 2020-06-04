@@ -58,7 +58,7 @@ end
 def check_apikey_file_has_been_modified
 
     modified_files = git.modified_files
-    if modified_files.include?('APIKey.swift')
+    if modified_files.include?(./APIKey.swift')
         warn('APIKeyが含まれている可能性があります。こちらのファイルを修正に含めないでください！', file: "./APIKey.swift", line: 1)
     end
 
