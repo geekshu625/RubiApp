@@ -9,12 +9,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 import SafariServices
 import SVProgressHUD
 import DIKit
 
-final class HomeViewController: UIViewController, UITableViewDelegate, PropertyInjectable {
+final class HomeViewController: UIViewController, PropertyInjectable {
 
     @IBOutlet private weak var textField: MainTextFieldStyle!
     @IBOutlet private weak var pasteButton: UIButton!
@@ -30,33 +29,10 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
 
     var dependency: Dependency!
 
-    //swiftlint:disable:next line_length
-    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<HomeViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
-        guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.cellId, for: indexPath) as? ResultTableViewCell
-            else { return UITableViewCell() }
-        cell.kanziLabel.text = item.kanzi
-        cell.hiraganaLabel.text = item.hiragana.converted
-        cell.saveButton.rx.tap.asDriver()
-            .drive(onNext: { [weak self] in
-                cell.isTap.toggle()
-                let data = Vocabulary(value: ["hiragana": item.hiragana.converted, "kanzi": item.kanzi, "id": item.id])
-                if cell.isTap == true {
-                    wSelf.viewModel.createVocabulary(vocabulary: data)
-                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-                } else {
-                    wSelf.viewModel.deleteVocabulary(vocabulary: data)
-                    cell.saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
-                }
-            })
-            .disposed(by: cell.disposeBag)
-        return cell
-    })
-
+    private var convertInfo =  [ConvertedInfo]()
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()
     private let backgroundTapGesture = UITapGestureRecognizer()
-    private let cellId = "ResultTableViewCell"
     private let pasteboard = UIPasteboard.general
     private let alertSentence = "😭文字を入力してください"
 
@@ -71,19 +47,25 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
         tabBarController?.tabBar.isTranslucent = false
         indicator.hidesWhenStopped = true
 
-        resultTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        resultTableView.register(R.nib.resultTableViewCell)
         resultTableView.tableFooterView = UIView()
         resultTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
-
-        viewModel.dataObservable.bind(to: resultTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+        resultTableView.rx.setDataSource(self).disposed(by: self.disposeBag)
 
         viewModel.isLoading
             .drive(indicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
-        viewModel.resultData
-            .drive(onNext: { [weak self](hiragana) in
-                self!.changedTextLabel.text = hiragana
+        viewModel.loadComplete
+            .drive(onNext: { [weak self] (info) in
+                self!.convertInfo = info
+                self!.resultTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.sentence
+            .drive(onNext: { [weak self] (sentence) in
+                self?.changedTextLabel.text = sentence
             })
             .disposed(by: disposeBag)
 
@@ -124,7 +106,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
                     self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
-                self?.viewModel.post(sentence: self!.textField.text!)
+                self?.viewModel.convert(sentence: self!.textField.text!)
             })
             .disposed(by: disposeBag)
 
@@ -158,6 +140,22 @@ final class HomeViewController: UIViewController, UITableViewDelegate, PropertyI
         let defAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(defAction)
         self.present(alert, animated: true, completion: nil)
+    }
+
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return convertInfo.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
+
+        cell.convertInfo = convertInfo[indexPath.row]
+
+        return cell
     }
 
 }
