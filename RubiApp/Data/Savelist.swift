@@ -1,5 +1,5 @@
 //
-//  Vocabulary.swift
+//  Savelist.swift
 //  RubiApp
 //
 //  Created by 松木周 on 2020/04/11.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class Vocabulary: Object {
+final class Savelist: Object {
 
     @objc dynamic var id: String = ""
     @objc dynamic var kanzi: String = ""

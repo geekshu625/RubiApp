@@ -74,16 +74,18 @@ class HomeViewModel: Injectable {
     }
 
     //Realmに保存
-    func createVocabulary(vocabulary: Vocabulary) {
-        VocabularyManager.add(vocabulary: vocabulary)
+    func addSaveList(savelist: Savelist) {
+        SavelistManager.add(savelist: savelist)
     }
 
     //Realmから削除
-    func deleteVocabulary(vocabulary: Vocabulary) {
-        VocabularyManager.delete(vocabulary: vocabulary)
+    func deleteSavelist(vocabulary: Savelist) {
+        SavelistManager.delete(savelist: vocabulary)
     }
+
     //TODO: エラー処理を追加
     private func bindError(_ errorMessage: String) {
         self.alertTrigger.onNext(errorMessage)
     }
+
 }

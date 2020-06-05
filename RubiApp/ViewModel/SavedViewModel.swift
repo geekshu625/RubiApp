@@ -13,7 +13,7 @@ import RxDataSources
 
 struct SavedTableViewData {
     let id = UUID().uuidString
-    let vocabulary: Vocabulary
+    let vocabulary: Savelist
 }
 
 extension SavedTableViewData: IdentifiableType, Equatable {
@@ -46,7 +46,7 @@ class SavedViewModel: ListViewModelProtocol {
     //RealmDBから全データを取得する
     func fetchAllVocabulary() {
         remove()
-        let vocabularies = VocabularyManager.getAll()
+        let vocabularies = SavelistManager.getAll()
         for vocabulary in vocabularies {
             let data = Data(vocabulary: vocabulary)
             self.toSectionModel(type: data)
@@ -54,13 +54,13 @@ class SavedViewModel: ListViewModelProtocol {
     }
 
     //RealmDBから個別データ削除
-    func deleteVocabulary(vocabulary: Vocabulary) {
-        VocabularyManager.delete(vocabulary: vocabulary)
+    func deleteVocabulary(vocabulary: Savelist) {
+        SavelistManager.delete(savelist: vocabulary)
     }
 
     //RealmDBから全データ削除
     func deleteAllVocabulary() {
-        VocabularyManager.deleteAll()
+        SavelistManager.deleteAll()
         remove()
     }
 
