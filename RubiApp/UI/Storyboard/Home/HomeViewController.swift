@@ -154,8 +154,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
 
         cell.convertInfo = convertInfo[indexPath.row]
+        cell.delegate = self
 
         return cell
+    }
+
+}
+
+extension HomeViewController: HomeActionDelegate {
+
+    func actionCell(_ actionCell: ResultTableViewCell, didTapSaveButton: UIButton) {
+
     }
 
 }

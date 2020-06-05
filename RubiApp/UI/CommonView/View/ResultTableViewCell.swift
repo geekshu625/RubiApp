@@ -14,6 +14,10 @@
 import UIKit
 import RxSwift
 
+protocol HomeActionDelegate: AnyObject {
+    func actionCell(_ actionCell: ResultTableViewCell, didTapSaveButton: UIButton)
+}
+
 class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet public weak var hiraganaLabel: SubLabelStyle!
@@ -22,6 +26,7 @@ class ResultTableViewCell: UITableViewCell {
 
     var disposeBag = DisposeBag()
     var isTap = false
+    weak var delegate: HomeActionDelegate?
 
     var convertInfo: ConvertedInfo! {
 
@@ -52,4 +57,11 @@ class ResultTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        delegate?.actionCell(self, didTapSaveButton: saveButton)
+    }
+
+
 }
