@@ -29,10 +29,7 @@ final class HomeViewController: UIViewController, PropertyInjectable {
 
     var dependency: Dependency!
 
-    private var setnteceList: [String] = {
-        return [""]
-    }()
-
+    private var convertInfo =  [ConvertedInfo]()
     private var viewModel: HomeViewModel!
     private let disposeBag = DisposeBag()
     private let backgroundTapGesture = UITapGestureRecognizer()
@@ -59,9 +56,16 @@ final class HomeViewController: UIViewController, PropertyInjectable {
             .drive(indicator.rx.isAnimating)
             .disposed(by: disposeBag)
 
-        viewModel.resultData
-            .drive(onNext: { [weak self](hiragana) in
-                self!.changedTextLabel.text = hiragana
+        viewModel.loadComplete
+            .drive(onNext: { [weak self] (info) in
+                self!.convertInfo = info
+                self!.resultTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.sentence
+            .drive(onNext: { [weak self] (sentence) in
+                self?.changedTextLabel.text = sentence
             })
             .disposed(by: disposeBag)
 
@@ -102,7 +106,7 @@ final class HomeViewController: UIViewController, PropertyInjectable {
                     self?.changedTextLabel.text = self!.alertSentence
                     return
                 }
-                self?.viewModel.post(sentence: self!.textField.text!)
+                self?.viewModel.convert(sentence: self!.textField.text!)
             })
             .disposed(by: disposeBag)
 
@@ -143,11 +147,13 @@ final class HomeViewController: UIViewController, PropertyInjectable {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return setnteceList.count
+        return convertInfo.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
+
+        cell.convertInfo = convertInfo[indexPath.row]
 
         return cell
     }

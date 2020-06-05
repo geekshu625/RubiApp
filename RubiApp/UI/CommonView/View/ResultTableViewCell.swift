@@ -23,6 +23,24 @@ class ResultTableViewCell: UITableViewCell {
     var disposeBag = DisposeBag()
     var isTap = false
 
+    var convertInfo: ConvertedInfo! {
+
+        didSet {
+            hiraganaLabel.text = convertInfo.sentence
+            kanziLabel.text = convertInfo.convertedSentence
+
+            switch convertInfo.saveState {
+            case .saved:
+                print("保存しています")
+            case .unSaved:
+                print("保存していません")
+            default:
+                break
+            }
+        }
+
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
