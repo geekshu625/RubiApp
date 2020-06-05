@@ -18,11 +18,7 @@ protocol HomeConvertSentenseUsecaseProtocol: AnyObject {
 
 class HomeViewModel: Injectable {
 
-
-    var dataObservable: Observable<[SectionModel]> {
-        return dataRelay.asObservable()
-    }
-    private let dataRelay = BehaviorRelay<[SectionModel]>(value: [])
+    var convertedInfo = [ConvertedInfo]()
 
     //インディケーターの状態を保持している
     lazy var isLoading: SharedSequence<DriverSharingStrategy, Bool> = {
@@ -30,11 +26,15 @@ class HomeViewModel: Injectable {
     }()
     private var isLoadingBehavior = BehaviorRelay<Bool>(value: false)
 
-    //変換したひらがなを保持している
-    lazy var resultData: SharedSequence<DriverSharingStrategy, String> = {
-        return self.resultDataBehavior.asDriver()
+    lazy var loadComplete: SharedSequence<DriverSharingStrategy, [ConvertedInfo]> = {
+        return self.loadCompleteBehavior.asDriver()
     }()
-    private var resultDataBehavior = BehaviorRelay<String>(value: "")
+    private var loadCompleteBehavior = BehaviorRelay<[ConvertedInfo]>(value: [ConvertedInfo]())
+
+    lazy var sentence: SharedSequence<DriverSharingStrategy, String> = {
+        return self.sentenceBehavior.asDriver()
+    }()
+    private var sentenceBehavior = BehaviorRelay<String>(value: "")
 
     let alertTrigger = PublishSubject<String>()
     private let disposeBag = DisposeBag()
@@ -47,24 +47,28 @@ class HomeViewModel: Injectable {
 
     required init(dependency: Dependency) {
         self.isLoadingBehavior.accept(false)
-        self.resultDataBehavior.accept("")
         self.homeConvertUsecase = dependency.homeConvertUsecase
     }
 
+    func convert(sentence: String) {
 
-    func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
+
         homeConvertUsecase?.postConvertSentence(sentence: sentence, completion: { (result) in
+
             switch result {
             case .success(let response):
                 self.isLoadingBehavior.accept(false)
-                self.resultDataBehavior.accept(response.converted)
-                let data = Data(hiragana: response, kanzi: sentence)
-                self.toSectionModel(type: data)
+                let info = ConvertedInfo(sentence: sentence, convertedSentence: (self.homeConvertUsecase?.convertedSentence!.converted)!, saveState: .unSaved)
+                self.convertedInfo.append(info)
+                self.sentenceBehavior.accept(sentence)
+                self.loadCompleteBehavior.accept(self.convertedInfo)
+
             case .failure(let error):
                 self.bindError(error.errorDescription!)
                 self.isLoadingBehavior.accept(false)
             }
+
         })
 
     }
