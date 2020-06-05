@@ -12,7 +12,8 @@ import RxCocoa
 import RealmSwift
 
 protocol HomeConvertSentenseUsecaseProtocol: AnyObject {
-    func postConvertSentence(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
+    var convertedSentence: ConvertedResponse? { get }
+    func postConvertSentence(sentence: String, completion: @escaping ((Result<Void, AppError>) -> Void))
 }
 
 class HomeViewModel: Injectable {

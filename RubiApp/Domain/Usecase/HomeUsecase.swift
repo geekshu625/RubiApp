@@ -9,11 +9,21 @@
 import Foundation
 import Alamofire
 
-final class HomeUsecase {}
+final class HomeUsecase {
+
+    // swiftlint:disable identifier_name
+    private (set) var _convertedSentence: ConvertedResponse?
+    // swiftlint:enable identifier_name
+
+}
 
 extension HomeUsecase: HomeConvertSentenseUsecaseProtocol {
 
-    func postConvertSentence(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void)) {
+    var convertedSentence: ConvertedResponse? {
+        return _convertedSentence
+    }
+
+    func postConvertSentence(sentence: String, completion: @escaping ((Result<Void, AppError>) -> Void)) {
 
         let request = HomeRepository.PostConvertSentence(sentence: sentence)
         let body = try? JSONEncoder().encode(request.body)
@@ -29,10 +39,10 @@ extension HomeUsecase: HomeConvertSentenseUsecaseProtocol {
                         completion(.failure(AppError.server(errorModel.error.code)))
                     }
 
-                    let hiragana = try? JSONDecoder().decode(ConvertedResponse.self, from: data)
+                    let convertSentence = try? JSONDecoder().decode(ConvertedResponse.self, from: data)
 
-                    //swiftlint:disable:next force_cast
-                    completion(.success(hiragana!))
+                    self._convertedSentence = convertSentence
+                    completion(.success(()))
 
                 case .failure(let error):
                     //ネットワークのエラー処理
