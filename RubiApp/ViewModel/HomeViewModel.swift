@@ -9,30 +9,14 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import RxDataSources
 import RealmSwift
-
-struct HomeTableViewData {
-    let id = UUID().uuidString
-    let hiragana: ConvertedResponse
-    let kanzi: String
-}
-
-extension HomeTableViewData: IdentifiableType, Equatable {
-    var identity: String {return id}
-    static func == (lhs: HomeTableViewData, rhs: HomeTableViewData) -> Bool {
-        return lhs.identity == rhs.identity
-    }
-}
 
 protocol HomeConvertSentenseUsecaseProtocol: AnyObject {
     func postConvertSentence(sentence: String, completion: @escaping ((Result<ConvertedResponse, AppError>) -> Void))
 }
 
-class HomeViewModel: ListViewModelProtocol, Injectable {
+class HomeViewModel: Injectable {
 
-    typealias Data = HomeTableViewData
-    typealias SectionModel = AnimatableSectionModel<Int, Data>
 
     var dataObservable: Observable<[SectionModel]> {
         return dataRelay.asObservable()
@@ -66,14 +50,6 @@ class HomeViewModel: ListViewModelProtocol, Injectable {
         self.homeConvertUsecase = dependency.homeConvertUsecase
     }
 
-    private func toSectionModel(shouldRefresh: Bool = false, type: Data) {
-        var preItems = dataRelay.value.first?.items ?? []
-        preItems.append(type)
-        let items = shouldRefresh ? [type] : preItems
-        let section = 0
-        let sectionModel  = SectionModel(model: section, items: items)
-        dataRelay.accept([sectionModel])
-    }
 
     func post(sentence: String) {
         self.isLoadingBehavior.accept(true)
