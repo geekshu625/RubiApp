@@ -45,6 +45,7 @@
 		AD48CA952487ABFA00D396B2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA942487ABFA00D396B2 /* HomeRouter.swift */; };
 		AD48CA972487B66800D396B2 /* SavedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA962487B66800D396B2 /* SavedRouter.swift */; };
 		AD48CA992487BA1400D396B2 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA982487BA1400D396B2 /* R.generated.swift */; };
+		AD48CA9D24894D1700D396B2 /* ConvertedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA9C24894D1700D396B2 /* ConvertedInfo.swift */; };
 		ADA1EED4247D0B0600043AE5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */; };
 		ADA1EED6247D0B0600043AE5 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */; };
 		ADA1EED8247D0B0600043AE5 /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA1EEC9247D0B0600043AE5 /* DIKit.framework */; };
@@ -169,6 +170,7 @@
 		AD48CA942487ABFA00D396B2 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		AD48CA962487B66800D396B2 /* SavedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRouter.swift; sourceTree = "<group>"; };
 		AD48CA982487BA1400D396B2 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		AD48CA9C24894D1700D396B2 /* ConvertedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedInfo.swift; sourceTree = "<group>"; };
 		ADA1EEC7247D0B0600043AE5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		ADA1EEC8247D0B0600043AE5 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		ADA1EEC9247D0B0600043AE5 /* DIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DIKit.framework; path = Carthage/Build/iOS/DIKit.framework; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 				AD419411244493D800FE6C75 /* APIError.swift */,
 				AD4194132444965100FE6C75 /* NetworkError.swift */,
 				AD4193D8243F101D00FE6C75 /* BodyData.swift */,
+				AD48CA9C24894D1700D396B2 /* ConvertedInfo.swift */,
 				AD4194092441CBFF00FE6C75 /* Vocabulary.swift */,
 			);
 			path = Data;
@@ -902,6 +905,7 @@
 				ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */,
 				AD4194102442F80500FE6C75 /* SavedViewModel.swift in Sources */,
 				ADBBFDC1247F3FBA00C13F6A /* AppError.swift in Sources */,
+				AD48CA9D24894D1700D396B2 /* ConvertedInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
