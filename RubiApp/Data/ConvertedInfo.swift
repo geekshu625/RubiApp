@@ -17,7 +17,14 @@ struct ConvertedInfo {
 
 }
 
-enum SaveState: String {
+enum SaveState {
     case unSaved
     case saved
+
+    var isStatus: Bool {
+        switch self {
+        case .saved: return true
+        case .unSaved: return false
+        }
+    }
 }

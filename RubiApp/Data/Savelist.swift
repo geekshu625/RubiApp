@@ -14,7 +14,7 @@ final class Savelist: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var kanzi: String = ""
     @objc dynamic var hiragana: String = ""
-    @objc dynamic var updatedAt: Date = Date()
+    @objc dynamic var saveStatus = SaveState.unSaved.isStatus
 
     override class func primaryKey() -> String? {
         return "id"
