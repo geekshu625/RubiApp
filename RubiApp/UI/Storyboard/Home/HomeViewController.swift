@@ -165,6 +165,13 @@ extension HomeViewController: HomeActionDelegate {
 
     func actionCell(_ actionCell: ResultTableViewCell, didTapSaveButton: UIButton) {
 
+        let savelist = Savelist()
+        savelist.hiragana = actionCell.convertInfo.sentence
+        savelist.kanzi = actionCell.convertInfo.convertedSentence
+        savelist.id = actionCell.convertInfo.id
+
+        viewModel.tappedSavedButton(saveState: actionCell.convertInfo.saveState, savelist: savelist)
+
     }
 
 }

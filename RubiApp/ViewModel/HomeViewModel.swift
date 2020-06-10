@@ -73,6 +73,21 @@ class HomeViewModel: Injectable {
 
     }
 
+    func tappedSavedButton(saveState: SaveState, savelist: Savelist) {
+
+        switch saveState {
+        case .saved:
+            deleteSavelist(vocabulary: savelist)
+
+        case .unSaved:
+            addSaveList(savelist: savelist)
+
+        default:
+            break
+        }
+
+    }
+
     //Realmに保存
     func addSaveList(savelist: Savelist) {
         SavelistManager.add(savelist: savelist)
