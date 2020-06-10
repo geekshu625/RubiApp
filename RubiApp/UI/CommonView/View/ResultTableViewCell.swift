@@ -36,9 +36,11 @@ class ResultTableViewCell: UITableViewCell {
 
             switch convertInfo.saveState {
             case .saved:
-                print("保存しています")
+                saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
+
             case .unSaved:
-                print("保存していません")
+                saveButton.setImage(#imageLiteral(resourceName: "Save_not"), for: .normal)
+                
             default:
                 break
             }
