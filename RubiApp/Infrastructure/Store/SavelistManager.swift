@@ -47,6 +47,7 @@ final class SavelistManager {
         do {
             try realm.write {
                 realm.delete(realm.objects(Savelist.self).filter("id == '\(savelist.id)'"))
+                NotificationCenter.default.post(name: .deleteSavelistFromRealm, object: nil, userInfo: ["deleteId": savelist.id])
             }
         } catch _ {
             // TODO: error処理

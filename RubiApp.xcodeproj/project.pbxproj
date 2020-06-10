@@ -48,6 +48,7 @@
 		AD48CA9D24894D1700D396B2 /* ConvertedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48CA9C24894D1700D396B2 /* ConvertedInfo.swift */; };
 		ADBB0556247E6E50004B9E68 /* StubConvertSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB0555247E6E50004B9E68 /* StubConvertSentence.swift */; };
 		ADBBFDC1247F3FBA00C13F6A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBFDC0247F3FBA00C13F6A /* AppError.swift */; };
+		ADBE15BF24912537005B921F /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBE15BE24912537005B921F /* Notification+.swift */; };
 		ADC52B2C243E15C700A62BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */; };
 		ADC52B33243E15C700A62BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B32243E15C700A62BA7 /* Assets.xcassets */; };
 		ADC52B36243E15C700A62BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC52B34243E15C700A62BA7 /* LaunchScreen.storyboard */; };
@@ -124,6 +125,7 @@
 		ADA1EEF1247D10F300043AE5 /* CarthageFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = CarthageFrameworks.xcfilelist; sourceTree = "<group>"; };
 		ADBB0555247E6E50004B9E68 /* StubConvertSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubConvertSentence.swift; sourceTree = "<group>"; };
 		ADBBFDC0247F3FBA00C13F6A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		ADBE15BE24912537005B921F /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		ADC52B28243E15C700A62BA7 /* RubiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC52B2B243E15C700A62BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADC52B32243E15C700A62BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				AD4194152444A24D00FE6C75 /* UIBarButtonItem.swift */,
+				ADBE15BE24912537005B921F /* Notification+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				ADFD2901247E48FB009BF4F0 /* HomeUsecase.swift in Sources */,
 				AD4194162444A24D00FE6C75 /* UIBarButtonItem.swift in Sources */,
 				AD4193D3243EFC2000FE6C75 /* APIRequest.swift in Sources */,
+				ADBE15BF24912537005B921F /* Notification+.swift in Sources */,
 				AD48CA952487ABFA00D396B2 /* HomeRouter.swift in Sources */,
 				AD4193BD243E3E6000FE6C75 /* UIColor.swift in Sources */,
 				AD4194142444965100FE6C75 /* NetworkError.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RealmSwift
+import RxRealm
 
 protocol HomeConvertSentenseUsecaseProtocol: AnyObject {
     var convertedSentence: ConvertedResponse? { get }
@@ -46,8 +47,11 @@ class HomeViewModel: Injectable {
     }
 
     required init(dependency: Dependency) {
+
         self.isLoadingBehavior.accept(false)
         self.homeConvertUsecase = dependency.homeConvertUsecase
+        observeSavelist()
+        
     }
 
     func convert(sentence: String) {
@@ -70,6 +74,53 @@ class HomeViewModel: Injectable {
             }
 
         })
+
+    }
+
+    private func observeSavelist() {
+
+        let realm = try? Realm()
+        let savelist = realm!.objects(Savelist.self)
+
+        Observable.changeset(from: savelist)
+            .subscribe(onNext: { (resultList, changes) in
+                if let changes = changes {
+
+                    //realmに値が追加された時の処理
+                    if changes.inserted.count > 0 {
+
+                        changes.inserted.map { (index) in
+                            self.updateToSavedStatus(updateId: resultList[index].id)
+                        }
+
+                    }
+
+                    //realmから削除された時の処理
+                    NotificationCenter.default.addObserver(self, selector: #selector(self.updateToUnSavedStatus(notification:)), name: .deleteSavelistFromRealm, object: nil)
+
+                }
+
+            })
+            .disposed(by: disposeBag)
+
+    }
+
+    private func updateToSavedStatus(updateId: String) {
+
+        if let index = convertedInfo.firstIndex(where: {$0.id == updateId}) {
+            convertedInfo[index].saveState = .saved
+            self.loadCompleteBehavior.accept(convertedInfo)
+        }
+
+    }
+
+    @objc private func updateToUnSavedStatus(notification: NSNotification?) {
+        // swiftlint:disable:next force_cast
+        let deleteId = notification?.userInfo!["deleteId"] as! String
+        if let index = convertedInfo.firstIndex(where: {$0.id == deleteId}) {
+            convertedInfo[index].saveState = .unSaved
+            self.loadCompleteBehavior.accept(convertedInfo)
+        }
 
     }
 
