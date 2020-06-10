@@ -63,7 +63,7 @@ class HomeViewModel: Injectable {
             switch result {
             case .success(let response):
                 self.isLoadingBehavior.accept(false)
-                let info = ConvertedInfo(sentence: sentence, convertedSentence: (self.homeConvertUsecase?.convertedSentence!.converted)!, saveState: .unSaved)
+                let info = ConvertedInfo(sentence: sentence, convertedSentence: (self.homeConvertUsecase?.convertedSentence!.converted)!, saveStatus: .unSaved)
                 self.convertedInfo.append(info)
                 self.sentenceBehavior.accept(sentence)
                 self.loadCompleteBehavior.accept(self.convertedInfo)
@@ -108,7 +108,7 @@ class HomeViewModel: Injectable {
     private func updateToSavedStatus(updateId: String) {
 
         if let index = convertedInfo.firstIndex(where: {$0.id == updateId}) {
-            convertedInfo[index].saveState = .saved
+            convertedInfo[index].saveStatus = .saved
             self.loadCompleteBehavior.accept(convertedInfo)
         }
 
@@ -118,20 +118,20 @@ class HomeViewModel: Injectable {
         // swiftlint:disable:next force_cast
         let deleteId = notification?.userInfo!["deleteId"] as! String
         if let index = convertedInfo.firstIndex(where: {$0.id == deleteId}) {
-            convertedInfo[index].saveState = .unSaved
+            convertedInfo[index].saveStatus = .unSaved
             self.loadCompleteBehavior.accept(convertedInfo)
         }
 
     }
 
-    func tappedSavedButton(saveState: SaveState, savelist: Savelist) {
+    func tappedSavedButton(saveState: SaveStatus, savelist: Savelist) {
 
         switch saveState {
         case .saved:
-            deleteSavelist(vocabulary: savelist)
+            deleteSavelist(savelist: savelist)
 
         case .unSaved:
-            addSaveList(savelist: savelist)
+            addSavelist(savelist: savelist)
 
         default:
             break
@@ -140,13 +140,13 @@ class HomeViewModel: Injectable {
     }
 
     //Realmに保存
-    func addSaveList(savelist: Savelist) {
+    func addSavelist(savelist: Savelist) {
         SavelistManager.add(savelist: savelist)
     }
 
     //Realmから削除
-    func deleteSavelist(vocabulary: Savelist) {
-        SavelistManager.delete(savelist: vocabulary)
+    func deleteSavelist(savelist: Savelist) {
+        SavelistManager.delete(savelist: savelist)
     }
 
     //TODO: エラー処理を追加
