@@ -13,6 +13,7 @@ struct ConvertedInfo {
     var sentence: String
     var convertedSentence: String
     var saveState: SaveState
+    var id: String = UUID().uuidString
 
 }
 
