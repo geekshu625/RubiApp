@@ -22,6 +22,13 @@ def info_plist_path
 
 end
 
+## APIKey.swift パス
+def apikey_swift_path
+
+    return "RubiApp/APIKey.swift"
+
+end
+
 # GitHub Issue を探す
 def find_github_issue
 
@@ -57,9 +64,9 @@ end
 # APIKyeのファイルに差分がでていないか確認する
 def check_apikey_file_has_been_modified
 
-    modified_files = git.modified_files
-    if modified_files.include?(./APIKey.swift')
-        warn('APIKeyが含まれている可能性があります。こちらのファイルを修正に含めないでください！', file: "./APIKey.swift", line: 1)
+    modified = git.modified_files.include?(apikey_swift_path)
+    if modified
+        warn('APIKeyが含まれている可能性があります。こちらのファイルを修正に含めないでください！', file: "APIKey.swift", line: 1)
     end
 
 end
