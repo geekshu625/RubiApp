@@ -7,32 +7,12 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 
 class SavedViewModel {
 
-    var convertedInfo = [ConvertedInfo]()
-
-    var dataObservable: Observable<[ConvertedInfo]> {
-        return dataRelay.asObservable()
-    }
-    private let dataRelay = BehaviorRelay<[ConvertedInfo]>(value: [])
-    private let disposeBag = DisposeBag()
-
-    //RealmDBから全データを取得する
-    func fetchAllVocabulary() {
-
-    }
-
     //RealmDBから個別データ削除
-    func deleteVocabulary(vocabulary: Savelist) {
-        SavelistManager.delete(savelist: vocabulary)
-    }
-
-    //RealmDBから全データ削除
-    func deleteAllVocabulary() {
-        SavelistManager.deleteAll()
+    func deleteSavelist(savelist: Savelist) {
+        SavelistManager.delete(savelist: savelist)
     }
 
 }

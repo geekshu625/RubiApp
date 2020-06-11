@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 final class SavedViewController: UIViewController, AlertProtocol, PropertyInjectable {
 
@@ -20,8 +21,12 @@ final class SavedViewController: UIViewController, AlertProtocol, PropertyInject
     }
 
     var dependency: Dependency!
+    //TODO: DIするためにViewModelに記載する
+    var savelistArray: Results<Savelist> = {
+        return SavelistManager.getAll()
+    }()
 
-    private var convertInfo =  [ConvertedInfo]()
+    var notificationToken: NotificationToken?
     private var viewModel: SavedViewModel!
     private let disposeBag = DisposeBag()
 
@@ -40,6 +45,29 @@ final class SavedViewController: UIViewController, AlertProtocol, PropertyInject
         savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
         savedTableView.rx.setDataSource(self).disposed(by: self.disposeBag)
 
+        // Realm更新時、reloadDataする
+        notificationToken = savelistArray.observe({ [weak self] (change) in
+            guard let tableView = self?.savedTableView else { return }
+
+            switch change {
+            case .initial:
+                tableView.reloadData()
+            case .update(_, deletions: let deletions, insertions: let insertions, modifications: let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                // TODO: エラー処理
+                fatalError("\(error)")
+                break
+            }
+        })
+
         settingButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 SavedRouter.moveToSettingViewController(from: self!)
@@ -47,24 +75,38 @@ final class SavedViewController: UIViewController, AlertProtocol, PropertyInject
             .disposed(by: disposeBag)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchAllVocabulary()
-    }
-
 }
 
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return convertInfo.count
+        return savelistArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
 
-        cell.convertInfo = convertInfo[indexPath.row]
+        let savelist = savelistArray[indexPath.row]
+        cell.convertInfo = ConvertedInfo(sentence: savelist.hiragana, convertedSentence: savelist.kanzi, saveStatus: SaveStatus.saved, id: savelist.id)
+        cell.delegate = self
 
         return cell
     }
 
 }
+
+extension SavedViewController: HomeActionDelegate {
+
+    func actionCell(_ actionCell: ResultTableViewCell, didTapSaveButton: UIButton) {
+
+        let savelist = Savelist()
+        savelist.hiragana = actionCell.convertInfo.sentence
+        savelist.kanzi = actionCell.convertInfo.convertedSentence
+        savelist.id = actionCell.convertInfo.id
+
+        viewModel.deleteSavelist(savelist: savelist)
+
+    }
+
+}
+
