@@ -156,7 +156,7 @@ check_incled_wip_in_pr
 
 github_issue = find_github_issue
 if github_issue
-    message "Resolve ##{github_issue[1]}"
+    message "close ##{github_issue[1]}"
 end
 
 develop_pr_check
