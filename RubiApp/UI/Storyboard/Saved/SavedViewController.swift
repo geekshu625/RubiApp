@@ -9,43 +9,29 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 
-final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol {
+final class SavedViewController: UIViewController, AlertProtocol {
 
     @IBOutlet private weak var savedTableView: UITableView!
     @IBOutlet private weak var settingButton: UIBarButtonItem!
 
-    //swiftlint:disable:next line_length
-    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
-        guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.cellId, for: indexPath) as? ResultTableViewCell
-            else { return UITableViewCell() }
-        cell.kanziLabel.text = item.vocabulary.kanzi
-        cell.hiraganaLabel.text = item.vocabulary.hiragana
-        cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-        cell.saveButton.isEnabled = false
-        return cell
-    })
-
+    private var convertInfo =  [ConvertedInfo]()
     private var viewModel: SavedViewModel!
     private let disposeBag = DisposeBag()
-    private let cellId = "ResultTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.view.backgroundColor = .backgroud
         tabBarController?.tabBar.isTranslucent = false
 
-        savedTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
-        savedTableView.tableFooterView = UIView()
-        savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
-        savedTableView.allowsSelection = false
-
         viewModel = SavedViewModel()
-        viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+
+        savedTableView.register(R.nib.resultTableViewCell)
+        savedTableView.tableFooterView = UIView()
+        savedTableView.allowsSelection = false
+        savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        savedTableView.rx.setDataSource(self).disposed(by: self.disposeBag)
 
         settingButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
@@ -56,6 +42,22 @@ final class SavedViewController: UIViewController, UITableViewDelegate, AlertPro
 
     override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchAllVocabulary()
+    }
+
+}
+
+extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return convertInfo.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
+
+        cell.convertInfo = convertInfo[indexPath.row]
+
+        return cell
     }
 
 }
