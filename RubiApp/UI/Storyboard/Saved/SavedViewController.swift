@@ -10,10 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class SavedViewController: UIViewController, AlertProtocol {
+final class SavedViewController: UIViewController, AlertProtocol, PropertyInjectable {
 
     @IBOutlet private weak var savedTableView: UITableView!
     @IBOutlet private weak var settingButton: UIBarButtonItem!
+
+    struct Dependency {
+        let savedViewModel: SavedViewModel
+    }
+
+    var dependency: Dependency!
 
     private var convertInfo =  [ConvertedInfo]()
     private var viewModel: SavedViewModel!
@@ -22,10 +28,11 @@ final class SavedViewController: UIViewController, AlertProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        AppDelegate.resolver.injectToSavedViewController(self)
+        viewModel = dependency.savedViewModel
+
         self.view.backgroundColor = .backgroud
         tabBarController?.tabBar.isTranslucent = false
-
-        viewModel = SavedViewModel()
 
         savedTableView.register(R.nib.resultTableViewCell)
         savedTableView.tableFooterView = UIView()
