@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 import RxSwift
 
-final class VocabularyManager {
+final class SavelistManager {
 
     // swiftlint:disable:next force_try
     static var realm: Realm = try! Realm()
 
     // 全件取得
-    static func getAll() -> Results<Vocabulary> {
-        return realm.objects(Vocabulary.self).sorted(byKeyPath: "updatedAt", ascending: false)
+    static func getAll() -> Results<Savelist> {
+        return realm.objects(Savelist.self).sorted(byKeyPath: "updatedAt", ascending: false)
     }
 
     // 全件削除
@@ -32,10 +32,10 @@ final class VocabularyManager {
     }
 
     // 追加
-    static func add(vocabulary: Vocabulary) {
+    static func add(savelist: Savelist) {
         do {
             try realm.write {
-                realm.add(vocabulary)
+                realm.add(savelist)
             }
         } catch _ {
             // TODO: error処理
@@ -43,10 +43,11 @@ final class VocabularyManager {
     }
 
     // 削除
-    static func delete(vocabulary: Vocabulary) {
+    static func delete(savelist: Savelist) {
         do {
             try realm.write {
-                realm.delete(realm.objects(Vocabulary.self).filter("id == '\(vocabulary.id)'"))
+                realm.delete(realm.objects(Savelist.self).filter("id == '\(savelist.id)'"))
+                NotificationCenter.default.post(name: .deleteSavelistFromRealm, object: nil, userInfo: ["deleteId": savelist.id])
             }
         } catch _ {
             // TODO: error処理

@@ -12,11 +12,19 @@ struct ConvertedInfo {
 
     var sentence: String
     var convertedSentence: String
-    var saveState: SaveState
+    var saveStatus: SaveStatus
+    var id: String = UUID().uuidString
 
 }
 
-enum SaveState: String {
+enum SaveStatus {
     case unSaved
     case saved
+
+    var isStatus: Bool {
+        switch self {
+        case .saved: return true
+        case .unSaved: return false
+        }
+    }
 }
