@@ -17,7 +17,7 @@ final class SavelistManager {
 
     // 全件取得
     static func getAll() -> Results<Savelist> {
-        return realm.objects(Savelist.self).sorted(byKeyPath: "updatedAt", ascending: false)
+        return realm.objects(Savelist.self)
     }
 
     // 全件削除

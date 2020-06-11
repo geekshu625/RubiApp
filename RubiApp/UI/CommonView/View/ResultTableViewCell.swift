@@ -34,7 +34,7 @@ class ResultTableViewCell: UITableViewCell {
             hiraganaLabel.text = convertInfo.sentence
             kanziLabel.text = convertInfo.convertedSentence
 
-            switch convertInfo.saveState {
+            switch convertInfo.saveStatus {
             case .saved:
                 saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
 

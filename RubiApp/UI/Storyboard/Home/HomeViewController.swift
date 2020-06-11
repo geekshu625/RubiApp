@@ -170,7 +170,7 @@ extension HomeViewController: HomeActionDelegate {
         savelist.kanzi = actionCell.convertInfo.convertedSentence
         savelist.id = actionCell.convertInfo.id
 
-        viewModel.tappedSavedButton(saveState: actionCell.convertInfo.saveState, savelist: savelist)
+        viewModel.tappedSavedButton(saveState: actionCell.convertInfo.saveStatus, savelist: savelist)
 
     }
 

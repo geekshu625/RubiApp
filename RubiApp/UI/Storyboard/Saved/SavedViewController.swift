@@ -9,43 +9,64 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
+import RealmSwift
 
-final class SavedViewController: UIViewController, UITableViewDelegate, AlertProtocol {
+final class SavedViewController: UIViewController, AlertProtocol, PropertyInjectable {
 
     @IBOutlet private weak var savedTableView: UITableView!
     @IBOutlet private weak var settingButton: UIBarButtonItem!
 
-    //swiftlint:disable:next line_length
-    lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SavedViewModel.SectionModel>.init(animationConfiguration: AnimationConfiguration(insertAnimation: .fade, reloadAnimation: .none, deleteAnimation: .fade), configureCell: { [weak self] _, tableView, indexPath, item in
-        guard let wSelf = self,
-            let cell = tableView.dequeueReusableCell(withIdentifier: wSelf.cellId, for: indexPath) as? ResultTableViewCell
-            else { return UITableViewCell() }
-        cell.kanziLabel.text = item.vocabulary.kanzi
-        cell.hiraganaLabel.text = item.vocabulary.hiragana
-        cell.saveButton.setImage(#imageLiteral(resourceName: "Save_done"), for: .normal)
-        cell.saveButton.isEnabled = false
-        return cell
-    })
+    struct Dependency {
+        let savedViewModel: SavedViewModel
+    }
 
+    var dependency: Dependency!
+    //TODO: DIするためにViewModelに記載する
+    var savelistArray: Results<Savelist> = {
+        return SavelistManager.getAll()
+    }()
+
+    var notificationToken: NotificationToken?
     private var viewModel: SavedViewModel!
     private let disposeBag = DisposeBag()
-    private let cellId = "ResultTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        AppDelegate.resolver.injectToSavedViewController(self)
+        viewModel = dependency.savedViewModel
+
         self.view.backgroundColor = .backgroud
         tabBarController?.tabBar.isTranslucent = false
 
-        savedTableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        savedTableView.register(R.nib.resultTableViewCell)
         savedTableView.tableFooterView = UIView()
-        savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
         savedTableView.allowsSelection = false
+        savedTableView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        savedTableView.rx.setDataSource(self).disposed(by: self.disposeBag)
 
-        viewModel = SavedViewModel()
-        viewModel.dataObservable.bind(to: savedTableView.rx.items(dataSource: dataSource)).disposed(by: self.disposeBag)
+        // Realm更新時、reloadDataする
+        notificationToken = savelistArray.observe({ [weak self] (change) in
+            guard let tableView = self?.savedTableView else { return }
+
+            switch change {
+            case .initial:
+                tableView.reloadData()
+            case .update(_, deletions: let deletions, insertions: let insertions, modifications: let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                // TODO: エラー処理
+                fatalError("\(error)")
+                break
+            }
+        })
 
         settingButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
@@ -54,8 +75,38 @@ final class SavedViewController: UIViewController, UITableViewDelegate, AlertPro
             .disposed(by: disposeBag)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchAllVocabulary()
+}
+
+extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return savelistArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resultTableViewCell, for: indexPath)!
+
+        let savelist = savelistArray[indexPath.row]
+        cell.convertInfo = ConvertedInfo(sentence: savelist.hiragana, convertedSentence: savelist.kanzi, saveStatus: SaveStatus.saved, id: savelist.id)
+        cell.delegate = self
+
+        return cell
     }
 
 }
+
+extension SavedViewController: HomeActionDelegate {
+
+    func actionCell(_ actionCell: ResultTableViewCell, didTapSaveButton: UIButton) {
+
+        let savelist = Savelist()
+        savelist.hiragana = actionCell.convertInfo.sentence
+        savelist.kanzi = actionCell.convertInfo.convertedSentence
+        savelist.id = actionCell.convertInfo.id
+
+        viewModel.deleteSavelist(savelist: savelist)
+
+    }
+
+}
+
