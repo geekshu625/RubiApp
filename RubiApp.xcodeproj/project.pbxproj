@@ -28,7 +28,6 @@
 		AD4193D7243F0A9600FE6C75 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D6243F0A9600FE6C75 /* APIKey.swift */; };
 		AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193D8243F101D00FE6C75 /* BodyData.swift */; };
 		AD4193DD243F2DE300FE6C75 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */; };
-		AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */; };
 		AD4193E12440566400FE6C75 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4193E02440566400FE6C75 /* UITextField.swift */; };
 		AD41940A2441CBFF00FE6C75 /* Savelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4194092441CBFF00FE6C75 /* Savelist.swift */; };
 		AD41940C2441CCBE00FE6C75 /* SavelistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41940B2441CCBE00FE6C75 /* SavelistManager.swift */; };
@@ -104,7 +103,6 @@
 		AD4193D6243F0A9600FE6C75 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AD4193D8243F101D00FE6C75 /* BodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyData.swift; sourceTree = "<group>"; };
 		AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		AD4193E02440566400FE6C75 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		AD4194092441CBFF00FE6C75 /* Savelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savelist.swift; sourceTree = "<group>"; };
 		AD41940B2441CCBE00FE6C75 /* SavelistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavelistManager.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			children = (
 				AD4193DC243F2DE300FE6C75 /* HomeViewModel.swift */,
 				AD41940F2442F80500FE6C75 /* SavedViewModel.swift */,
-				AD4193DE243F505200FE6C75 /* ViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -780,7 +777,6 @@
 				AD4193DD243F2DE300FE6C75 /* HomeViewModel.swift in Sources */,
 				AD4193D9243F101D00FE6C75 /* BodyData.swift in Sources */,
 				AD48CA55247FB2F500D396B2 /* AppResolver.swift in Sources */,
-				AD4193DF243F505200FE6C75 /* ViewModelProtocol.swift in Sources */,
 				AD48CA922487AACF00D396B2 /* SettingViewController.swift in Sources */,
 				AD4193BB243E3DC500FE6C75 /* HomeViewController.swift in Sources */,
 				AD419412244493D800FE6C75 /* APIError.swift in Sources */,
